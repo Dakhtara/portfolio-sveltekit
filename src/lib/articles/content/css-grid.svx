@@ -1,0 +1,42 @@
+---
+title: "CSS Grid"
+description: "Learn how to create responsive layouts using CSS Grid."
+slug: "css-grid"
+date: "2024-05-23"
+---
+
+## Comment on définit une grille
+Comme on en a eu l'habitude avec Bootstrap ou des librairies similaires.On utilisait une classe de container et ensuite on définissait des colonnes.
+
+```html
+<div class="row">
+  <div class="col-6">Colonne 1</div>
+  <div class="col-6">Colonne 2</div>
+</div>
+```
+
+Avec les grilles CSS, on va définir une grille sur un élément parent et ensuite on va définir des zones à l'intérieur de cette grille.
+
+```html {1} /item/
+<div class="grid">
+  <div class="item">Colonne 1</div>
+  <div class="item">Colonne 2</div>
+</div>
+```
+```css
+.grid {  display: grid;}
+```
+
+## Definir une grille complexe 
+Grace a grid on peut definir des grilles complexes comme un bento et toujours garder une coherence sur le responsive. 
+
+## Les template areas
+On peut creer des zones de templtates afin d'y attribuer des section
+
+## Les subgrid
+Les subgrid sont assez recentes dans grid et permettent dassigner des enfants de la colonnes a se contraindre a la grille parente. 
+
+## Le support
+
+Les grilles CSS sont supportées par tous les navigateurs modernes. C'est un outil puissant pour la mise en page de vos sites web.
+[Can I use](https://caniuse.com/css-grid)
