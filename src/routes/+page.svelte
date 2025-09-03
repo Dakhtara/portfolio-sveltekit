@@ -1,7 +1,9 @@
 <script>
 	import AnimationHeader from '$lib/components/AnimationHeader.svelte';
+	import BeyondCodeSection from '$lib/components/BeyondCodeSection/BeyondCodeSection.svelte';
 	import Button from '$lib/components/Button.svelte';
 	import SectionProject from '$lib/components/SectionProject/SectionProject.svelte';
+	import SkillSection from '$lib/components/SkillSection/SkillSection.svelte';
 </script>
 
 <svelte:head>
@@ -45,3 +47,7 @@
 </section>
 
 <SectionProject />
+
+<SkillSection />
+
+<BeyondCodeSection />
