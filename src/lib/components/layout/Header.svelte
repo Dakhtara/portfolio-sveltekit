@@ -14,13 +14,13 @@
                 <a href="/" class="text-white/80 hover:text-white transition-colors">
                     Accueil
                 </a>
-                <a href="#projects" class="text-white/80 hover:text-white transition-colors">
+                <a href="/#projects" class="text-white/80 hover:text-white transition-colors">
                     Projets
                 </a>
-                <a href="#articles" class="text-white/80 hover:text-white transition-colors">
+                <a href="/#articles" class="text-white/80 hover:text-white transition-colors">
                     Articles
                 </a>
-                <a href="#contact" class="text-white/80 hover:text-white transition-colors">
+                <a href="/#contact" class="text-white/80 hover:text-white transition-colors">
                     Contact
                 </a>
             </nav>
