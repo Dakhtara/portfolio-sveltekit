@@ -1,4 +1,5 @@
 <script lang="ts">
+	import nl2br from '$lib/utils/nl2br';
 	import Badge from '../Badge.svelte';
 
     type Props = {
@@ -8,10 +9,6 @@
         src: string;
     }
     let {title, description, tags, src}: Props = $props();
-
-    function nl2br(str: string) {
-        return str.replace(/\n/g, '<br />');
-    }
 </script>
 
 <div
