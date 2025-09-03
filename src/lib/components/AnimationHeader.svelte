@@ -20,9 +20,9 @@
 			time += 0.01;
 
 			const bgGradient = ctx.createLinearGradient(0, 0, 0, canvasRef.offsetHeight);
-			bgGradient.addColorStop(0, '#000000');
-			bgGradient.addColorStop(0.4, '#0a0a0a');
-			bgGradient.addColorStop(1, '#111111');
+			bgGradient.addColorStop(0, '#0F172B');
+			bgGradient.addColorStop(0.4, '#0F172B');
+			bgGradient.addColorStop(1, '#0F172B');
 			ctx.fillStyle = bgGradient;
 			ctx.fillRect(0, 0, canvasRef.offsetWidth, canvasRef.offsetHeight);
 
@@ -86,5 +86,5 @@
 	});
 </script>
 
-<canvas bind:this={canvasRef} class="absolute inset-0 h-full w-full" style="width:100%;height:100%;"
+<canvas bind:this={canvasRef} class="absolute inset-0 h-full w-full mx-auto" style="width:100%;height:100%;"
 ></canvas>

@@ -1,13 +1,14 @@
 <script>
 	import AnimationHeader from '$lib/components/AnimationHeader.svelte';
 	import Button from '$lib/components/Button.svelte';
+	import SectionProject from '$lib/components/SectionProject/SectionProject.svelte';
 </script>
 
 <svelte:head>
 	<title>Anthony Matignon - Développeur Front et Back</title>
 </svelte:head>
 
-<section class="relative h-screen w-full overflow-hidden pt-24">
+<section class="relative min-h-[50dvh] w-full overflow-hidden pt-24">
 	<AnimationHeader />
 	<div class="relative z-10 flex h-full flex-col items-center justify-center">
 		<div class="max-w-6xl px-6 text-center text-white">
@@ -42,3 +43,5 @@
 		</div>
 	</div>
 </section>
+
+<SectionProject />

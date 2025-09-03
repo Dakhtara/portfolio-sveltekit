@@ -1,6 +1,6 @@
 <script lang="ts">
 	import '../app.css';
-	import favicon from '$lib/assets/favicon.svg';
+	import favicon from '$lib/assets/favicon.jpg';
 	import Header from '$lib/components/layout/Header.svelte';
 	import Footer from '$lib/components/layout/Footer.svelte';
 
@@ -11,11 +11,11 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-<div class="bg-black text-white">
-	<div class="container mx-auto min-h-dvh">
+<div class="bg-slate-900 text-white min-h-dvh">
+	<div class="container mx-auto">
 		<Header />
 		{@render children?.()}
 
-		<Footer />
 	</div>
+	<Footer />
 </div>
