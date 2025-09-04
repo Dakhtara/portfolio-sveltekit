@@ -1,5 +1,6 @@
 <script lang="ts">
-	import BeyondCodeCard from './BeyondCodeCard.svelte';
+	import HeadingSectionAnimation from '../HeadingSectionAnimation.svelte';
+import BeyondCodeCard from './BeyondCodeCard.svelte';
 
 	const interests = [
 		{
@@ -22,12 +23,7 @@
 
 <section class="px-6 py-25">
 	<div class="mx-auto max-w-4xl">
-		<div class="mb-16 text-center">
-			<h2 class="mb-4 text-4xl font-bold tracking-tight text-balance md:text-5xl">
-				Au-delà du code 🚀
-			</h2>
-			<p class="text-lg text-white/60">Ce qui me passionne en dehors du code.</p>
-		</div>
+		<HeadingSectionAnimation heading="Au-delà du code 🚀" subheading="Ce qui me passionne en dehors du code." />
 		<div class="grid grid-cols-1 gap-6 md:grid-cols-3">
 			{#each interests as interest, index}
 				<BeyondCodeCard {...interest} />

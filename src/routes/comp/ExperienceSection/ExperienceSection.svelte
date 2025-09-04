@@ -1,5 +1,6 @@
 <script lang="ts">
-	import Experience from './Experience.svelte';
+	import HeadingSectionAnimation from '../HeadingSectionAnimation.svelte';
+import Experience from './Experience.svelte';
 
 	const experiences = [
 		{
@@ -42,10 +43,7 @@
 
 <section class="px-6 py-24">
 	<div class="mx-auto max-w-4xl">
-		<div class="mb-16 text-center">
-			<h2 class="mb-4 text-4xl font-bold tracking-tight text-balance md:text-5xl">Experiences</h2>
-			<p class="text-lg text-white/60">Mon parcours dans la création de projets web</p>
-		</div>
+		<HeadingSectionAnimation heading="Expériences" subheading="Mon parcours dans la création de projets web" />
 
 		<div class="space-y-6">
 			{#each experiences as experience}

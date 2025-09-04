@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ProgressBar from "../ProgressBar.svelte";
+	import ProgressBar from "$lib/components/ProgressBar.svelte";
 
 	type Props = {
 		title: string;

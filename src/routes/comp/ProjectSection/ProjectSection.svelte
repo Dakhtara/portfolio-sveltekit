@@ -1,15 +1,14 @@
 <script lang="ts">
+	import HeadingSectionAnimation from '../HeadingSectionAnimation.svelte';
 	import Project from './Project.svelte';
 </script>
 
 <section class="px-6 py-24">
 	<div class="mx-auto max-w-7xl">
-		<div class="mb-16 text-center">
-			<h2 class="mb-4 text-4xl font-bold tracking-tight text-balance md:text-5xl">Mes Projets</h2>
-			<p class="mx-auto max-w-xl text-lg text-white/60">
-				Une sélection de projets qui mettent en avant mon expertise en développement web.
-			</p>
-		</div>
+		<HeadingSectionAnimation
+			heading="Mes projets"
+			subheading="Une sélection de projets qui mettent en avant mon expertise en développement web."
+		/>
 
 		<div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
 			<Project
@@ -41,8 +40,8 @@ Il s'agissait de créer de nouvelles routes pour leur API ainsi que d'améliorer
 				description="Création d'un lecteur de musique personnel avec une gestion de playlist.
 Ce projet est crée sous Vue avec un serveur express et une gestion des stream pour les fichiers musicaux
 "
-            tags={["Vue", "Express", "FFMpeg"]}
-            src="/lecteur-musique.webp"
+				tags={['Vue', 'Express', 'FFMpeg']}
+				src="/lecteur-musique.webp"
 			/>
 		</div>
 	</div>

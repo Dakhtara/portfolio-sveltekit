@@ -1,6 +1,6 @@
 <script lang="ts">
 	import nl2br from '$lib/utils/nl2br';
-	import Badge from '../Badge.svelte';
+	import Badge from '$lib/components/Badge.svelte';
 
     type Props = {
         title: string;
