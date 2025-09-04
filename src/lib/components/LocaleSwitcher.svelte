@@ -7,6 +7,16 @@
 	let currentLocale = getLocale();
 
 	let isOpen = $state(false);
+
+    let position = $state({ x: 0, y: 0 });
+
+    $effect(() => {
+        if (isOpen) {
+            // Position the dropdown in a visible area
+            position = { x: 0, y: 0 };
+            
+        }
+    })
 </script>
 
 {#if isOpen}
@@ -16,8 +26,9 @@
 {/if}
 <div class="relative z-20">
 	<button
+    style="anchor-name: --my-anchor top"
 		onclick={() => (isOpen = !isOpen)}
-		class="flex cursor-pointer items-center gap-4 rounded-lg border border-white/20 px-2 py-1 text-white/90 transition-colors ease-in hover:bg-white/10"
+		class="flex  cursor-pointer items-center gap-4 rounded-lg border border-white/20 px-2 py-1 text-white/90 transition-colors ease-in hover:bg-white/10"
 	>
 		<Globe class="size-4" />
 		{#if currentLocale === 'fr'}
@@ -28,7 +39,8 @@
 	</button>
 	{#if isOpen}
 		<div
-			class="absolute right-0 mt-2 w-32 rounded-lg border border-white/20 bg-slate-900/80 text-white/90 backdrop-blur-sm"
+			class="fixed mt-2 w-32 rounded-lg border border-white/20 bg-slate-900/80 text-white/90 backdrop-blur-sm"
+            style="position-anchor: --my-anchor"
 		>
 			<div class="flex w-full flex-col items-start">
                 {@render languageButton('en', m.fluffy_drab_chicken_cherish(), currentLocale)}
