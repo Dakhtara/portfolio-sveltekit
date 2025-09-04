@@ -1,0 +1,57 @@
+---
+title: "Astro, c'est quoi"
+description: "Astro devient de plus en plus populaires. Mais à quoi ca sert et comment déployer un site sous Astro ?"
+slug: "css-grid"
+date: "2024-05-21"
+readTime: "3 min"
+---
+
+Astro est un framework comme on peut en voir dans le style de Nextjs, Nuxt ou encore Sveltekit.
+
+La différence d'Astro c'est qu'il se base sur les framework existant ou non pour pouvoir créer son propre site. 
+
+Son plus grand bénéfice est surtout sa manière de build de manière statique un site. 
+
+Par exemple vous souhaitez créer un site vitrine, en règle générale les pages sont statiques donc vous n'avez pas besoin de faire tourner un serveur pour générer de manière dynamique le site. Astro va générer uniquement le HTML, JS et CSS nécessaire et ensuite un simple serveur de fichier permet de faire fonctionner votre site.
+
+## Comment ca fonctionne ?
+
+Au premier abord, créer un site sous Astro ressemble beaucoup a n'importe quel framework que l'on trouve. 
+On génère un skeleton sous Astro, on crée des layout et composants au format .astro et on crée des pages en fonction du système de fichier (coucou Next et Sveltekit). 
+
+La différence principale réside déjà dans le format de ce fichier .astro, c'est un mixte entre du jsx et du Markdown. En gros c'est du MDX. 
+
+Vous créez donc vos layouts et vos pages. Une fois que vous êtes bon vous pouvez générer votre build et c'est ici que c'est très intéréssant. 
+Astro ne va pas générer des dizaines de fichiers js. Non par défaut la configuration c'est de rendre les pages brut en HTML, CSS et JS. Donc votre site est très léger.
+
+## C'est top mais si c'est statique c'est peu permissif
+
+Vus que la grande force d'Astro c'est de générer du statique, on serait vite tenter par dire que c'est aussi sa grande faiblesse. 
+Mais au contraire, il peut parfois être nécessaire d'avoir un accès au serveur pour valider par exemple un formulaire de contact. 
+Astro permet de faire du rendu hybride (statique et dynamique). 
+
+80% du site peut être fait de manière statique et certaines routes qui sont obligatoirement dynamique peuvent l'être. 
+
+Directement dans la page, on peut dire a Astro que si la page recoit une requête POST on souhaite effectué une action spécifique.
+De ce fait la page sera build mais l'action de POST sera stocké côté serveur et executé quand nécessaire.
+
+## Et faire du build de page dynamique ?
+
+Un autre cas d'usage très intéressant dans Astro, c'est de pouvoir pré générer des pages dynamiques. 
+
+Si par exemple vous avez un blog et que vous souhaitez générer dynamiquement les pages sans avoir a toucher au code, c'est tout à fait possible. 
+Vous pouvez créer un dossier qui va prendre un slug et ensuite avec une méthode getStaticPaths(); dans la page Astro, vous devrez retourner dedans un tableau de props a passer qui seront utilisés pour générer les chemins. 
+
+```js
+
+export async function getStaticPaths() {
+  return [
+    {slug: "toto", title: "Titre", content: "Content"},
+    {slug: "toto2", title: "Titre 2", content: "Content 2"},
+  ];
+}
+```
+
+Ici dans l'exemple Astro sait qu'il doit générer 2 pages de blog.
+
+C'était juste une présentation globale d'Astro, d'autres articles vont suivre afin d'aller plus dans le détails de certains usages de celui-ci.

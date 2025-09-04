@@ -1,4 +1,4 @@
-import { mdsvex, escapeSvelte} from 'mdsvex';
+import { mdsvex, escapeSvelte } from 'mdsvex';
 import adapter from '@sveltejs/adapter-node';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
@@ -17,8 +17,8 @@ const mdsvexOptions = {
 			const html = escapeSvelte(highlighter.codeToHtml(code, { lang, theme }));
 			return `{@html \`${html}\` }`;
 		}
-	},
-}
+	}
+};
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {

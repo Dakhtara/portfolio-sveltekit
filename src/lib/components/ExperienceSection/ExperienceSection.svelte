@@ -22,7 +22,21 @@
 			period: 'Aout 2018 - Novembre 2021',
 			location: 'Les Sables d\'Olonne - Hybride',
 			description: "Easysystème est le produit central chez Codes Rousseau, il gère les auto-écoles adhérentes, gère les abonnements et crédits des auto-ecoles, propose les séries de code aux élèves.\rCe produit existant depuis plusieurs années et dans le besoin d'orienter le site vers une API, une grande partie du projet a du être revu dans ces principes.\rPlusieurs composants Symfony ont été ajoutés afin de moderniser l'ensemble."
-		}
+		},
+        {
+            title: "Développeur Full-Stack",
+            company: "Digital Garden",
+            period: "Aout 2017 - Juillet 2018",
+            location: "Nantes",
+            description: "Création d'API sous Symfony 2/3 avec Front-End sous VueJS et Angular (2+).\rCréation de sites vitrine et sites de contact pour différents clients externe"
+        },
+        {
+            title: "Développeur Full-Stack",
+            company: "37 Deux",
+            period: "Janvier 2016 - Mai 2017",
+            location: "Les Sables d'Olonne",
+            description: "Création et maintenance de sites internet sous Symfony 2.\rMigration du site voyagebohemechic de Wordpress vers Symfony 2.\rDéveloppement d'une solution e-commerce en interne sous Symfony."
+        }
 	];
 </script>
 

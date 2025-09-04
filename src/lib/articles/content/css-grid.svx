@@ -1,8 +1,9 @@
 ---
 title: "CSS Grid"
-description: "Learn how to create responsive layouts using CSS Grid."
+description: "Les grilles CSS sont de plus en plus utilisées. Concrètement ca sert à quoi et en quoi est-ce différent de flex ?"
 slug: "css-grid"
 date: "2024-05-23"
+readTime: "2 min"
 ---
 
 ## Comment on définit une grille

@@ -1,10 +1,13 @@
 <script>
 	import AnimationHeader from '$lib/components/AnimationHeader.svelte';
+	import ArticleSection from '$lib/components/ArticlesSection/ArticleSection.svelte';
 	import BeyondCodeSection from '$lib/components/BeyondCodeSection/BeyondCodeSection.svelte';
 	import Button from '$lib/components/Button.svelte';
 	import ExperienceSection from '$lib/components/ExperienceSection/ExperienceSection.svelte';
 	import SectionProject from '$lib/components/SectionProject/SectionProject.svelte';
 	import SkillSection from '$lib/components/SkillSection/SkillSection.svelte';
+
+	let {data} = $props(); 
 </script>
 
 <svelte:head>
@@ -48,6 +51,8 @@
 </section>
 
 <SectionProject />
+
+<ArticleSection articles={data.articles} />
 
 <ExperienceSection />
 

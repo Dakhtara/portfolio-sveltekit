@@ -1,3 +1,4 @@
+import type { Component } from "svelte";
 import { render } from "svelte/server";
 
 type Article = {
@@ -11,14 +12,24 @@ type Article = {
     }
 }
 
+type ArticleMetadata = {
+    slug: string;
+    title: string;
+    description: string;
+    date: string;
+};
+
 export default async function ListArticles(): Promise<Article[]> {
     // grep all the articles from the dir content
     const articles = import.meta.glob("./**/*.svx");
     const processed = [];
     for (const path in articles) {
-        const source = await articles[path]();
+        const source: { metadata: ArticleMetadata; default: Component } = await articles[path]() as { metadata: ArticleMetadata; default: Component };
         processed.push({...source.metadata, content: render(source.default)});
     }
 
-    return processed;
+    // Sort descending by date by default
+    return processed.sort((a, b) => {
+        return new Date(b.date).getTime() - new Date(a.date).getTime();
+    });
 }
