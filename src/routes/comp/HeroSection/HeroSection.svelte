@@ -6,7 +6,9 @@
 	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
 
-	let heading: HTMLHeadingElement;
+    import * as m from "$lib/paraglide/messages";
+
+    let heading: HTMLHeadingElement;
 	let subheading: HTMLSpanElement;
     let buttonContainer: HTMLDivElement;
     let description: HTMLParagraphElement;
@@ -62,7 +64,7 @@
 					class="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm font-medium text-white/80 backdrop-blur-sm"
 				>
 					<div class="size-2 animate-pulse rounded-full bg-green-400"></div>
-					Disponible pour des missions en freelance
+					{m.long_game_sawfish_cry()}
 				</div>
 			</div>
 
@@ -76,17 +78,17 @@
 				bind:this={subheading}
 				class="text-5xl bg-gradient-to-r from-orange-400 via-red-400 to-cyan-400 bg-clip-text text-transparent"
 			>
-				Développeur Front et Back
+				{m.merry_blue_coyote_slide()}
         </p>
 			<p
                 bind:this={description}
 				class="mx-auto mt-4 mb-10 max-w-2xl text-lg leading-relaxed font-light text-pretty text-white/70 md:text-xl"
 			>
-				Développeur web passionné par la création d'expériences utilisateur fluides et engageantes.
+				{m.sour_sound_vole_enjoy()}
 			</p>
 			<div bind:this={buttonContainer} class="flex flex-col items-center justify-center gap-3 sm:flex-row">
-				<Button>Voir mes projets</Button>
-				<Button variant="ghost">Me contacter</Button>
+				<Button>{m.any_stale_samuel_buzz()}</Button>
+				<Button variant="ghost">{m.blue_bland_antelope_thrive()}</Button>
 			</div>
 		</div>
 	</div>

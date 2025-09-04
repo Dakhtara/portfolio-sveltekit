@@ -5,12 +5,13 @@
 	import SectionProject from './comp/ProjectSection/ProjectSection.svelte';
 	import SkillSection from './comp/SkillSection/SkillSection.svelte';
 	import HeroSection from './comp/HeroSection/HeroSection.svelte';
+	import * as m from "$lib/paraglide/messages";
 
 	let { data } = $props();
 </script>
 
 <svelte:head>
-	<title>Anthony Matignon - Développeur Front et Back</title>
+	<title>Anthony Matignon - {m.less_soft_gecko_honor()}</title>
 </svelte:head>
 
 <HeroSection />

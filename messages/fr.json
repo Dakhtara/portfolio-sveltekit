@@ -1,4 +1,12 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
-	"hello_world": "Hello, {name} from fr!"
+	"hello_world": "Hello, {name} from fr!",
+	"less_soft_gecko_honor": "Développeur Front et Back",
+	"long_game_sawfish_cry": "Disponible pour des missions en freelance",
+	"merry_blue_coyote_slide": "Développeur Front et Back",
+	"sour_sound_vole_enjoy": "Développeur web passionné par la création d'expériences utilisateur fluides et engageantes.",
+	"any_stale_samuel_buzz": "Voir mes projets",
+	"blue_bland_antelope_thrive": "Me contacter",
+	"fluffy_drab_chicken_cherish": "Anglais",
+	"gray_grassy_dog_persist": "Français"
 }

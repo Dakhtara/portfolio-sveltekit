@@ -1,4 +1,6 @@
 <script lang="ts">
+	import LocaleSwitcher from "../LocaleSwitcher.svelte";
+
 
 </script>
 
@@ -24,6 +26,10 @@
                     Contact
                 </a>
             </nav>
+
+            <div class="hidden md:flex items-center space-x-4">
+                <LocaleSwitcher />
+            </div>
         </div>
     </div>
 </header>
