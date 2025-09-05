@@ -20,7 +20,7 @@
 
 		const splitHeading = new SplitText(heading, { type: 'words,chars' });
 		gsap.from(splitHeading.chars, {
-			duration: 1,
+			duration: 1.2,
 			y: -50,
 			opacity: 0,
 			stagger: 0.05,
@@ -28,8 +28,8 @@
 		});
 
 		gsap.from(subheading, {
-			duration: 1,
-            delay: 0.8,
+			duration: 1.2,
+            delay: 1,
 			y: -40,
 			opacity: 0,
 			stagger: 0.1,
@@ -37,17 +37,17 @@
 		});
 
         gsap.from(description, {
-            duration: 1,
-            delay: 1.3,
+            duration: 2,
+            delay: 1.5,
             y: -40,
             opacity: 0,
             ease: 'power4.out'
         })
 
         gsap.from(buttonContainer, {
-            duration: 1.5,
+            duration: 2,
             y: 40,
-            delay: 1.3,
+            delay: 1.5,
             opacity: 0,
             stagger: 1,
             ease: 'power4.out'

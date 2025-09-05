@@ -25,7 +25,7 @@
 	</Portal>
 {/if}
 <div class="relative z-20">
-	<button
+	<button 
     style="anchor-name: --my-anchor top"
 		onclick={() => (isOpen = !isOpen)}
 		class="flex  cursor-pointer items-center gap-4 rounded-lg border border-white/20 px-2 py-1 text-white/90 transition-colors ease-in hover:bg-white/10"
