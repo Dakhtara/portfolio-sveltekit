@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { localizeHref } from '$lib/paraglide/runtime';
 	import { Calendar, ChevronRight } from '@lucide/svelte';
 
 	type Props = {
@@ -12,7 +13,7 @@
 </script>
 
 <a
-    href={'/articles/' + slug}
+    href={localizeHref('/articles/' + slug)}
 	class="group block cursor-pointer rounded-lg border border-white/10 bg-white/[0.02] backdrop-blur-sm transition-all duration-300 hover:border-white/20 hover:shadow-lg hover:shadow-cyan-500/5"
 >
 	<div class="p-6">

@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { SquareMenu, X } from '@lucide/svelte';
 	import Button from '../Button.svelte';
+		import { localizeHref } from '$lib/paraglide/runtime.js';
+
 	import LocaleSwitcher from '../LocaleSwitcher.svelte';
 	import { slide } from 'svelte/transition';
 	import * as m from "$lib/paraglide/messages";
@@ -12,13 +14,13 @@
 >
 	<div class="mx-auto max-w-7xl px-6 py-4">
 		<div class="flex items-center justify-between">
-			<a href="/" class="text-xl font-bold text-white">Anthony Matignon</a>
+			<a href={localizeHref('/')} class="text-xl font-bold text-white">Anthony Matignon</a>
 
 			<nav class="hidden items-center space-x-8 md:flex">
-				<a href="/" class="text-white/80 transition-colors hover:text-white"> {m.stout_bright_shrimp_fade()} </a>
-				<a href="/#projects" class="text-white/80 transition-colors hover:text-white"> {m.caring_dull_lemur_flip()} </a>
-				<a href="/#articles" class="text-white/80 transition-colors hover:text-white"> {m.yummy_wacky_meerkat_trip()} </a>
-				<a href="/contact" class="text-white/80 transition-colors hover:text-white"> {m.gaudy_level_myna_trim()} </a>
+				<a href={localizeHref('/')} class="text-white/80 transition-colors hover:text-white"> {m.stout_bright_shrimp_fade()} </a>
+				<a href={localizeHref('/#projects')} class="text-white/80 transition-colors hover:text-white"> {m.caring_dull_lemur_flip()} </a>
+				<a href={localizeHref('/#articles')} class="text-white/80 transition-colors hover:text-white"> {m.yummy_wacky_meerkat_trip()} </a>
+				<a href={localizeHref('/contact')} class="text-white/80 transition-colors hover:text-white"> {m.gaudy_level_myna_trim()} </a>
 			</nav>
 
 			<div class="hidden items-center space-x-4 md:flex">
@@ -39,28 +41,28 @@
 			<div transition:slide class="mt-4 border-t border-white/10 pb-4 md:hidden">
 				<nav class="mt-4 flex flex-col space-y-4">
 					<a
-						href="/"
+						href={localizeHref('/')}
 						class="text-white/80 transition-colors hover:text-white"
 						onclick={() => (isMenuOpen = false)}
 					>
 						{m.stout_bright_shrimp_fade()}
 					</a>
 					<a
-						href="/#projects"
+						href={localizeHref('/#projects')}
 						class="text-white/80 transition-colors hover:text-white"
 						onclick={() => (isMenuOpen = false)}
 					>
 						{m.caring_dull_lemur_flip()}
 					</a>
 					<a
-						href="/#articles"
+						href={localizeHref('/#articles')}
 						class="text-white/80 transition-colors hover:text-white"
 						onclick={() => (isMenuOpen = false)}
 					>
 						{m.yummy_wacky_meerkat_trip()}
 					</a>
 					<a
-						href="/#contact"
+						href={localizeHref('/contact')}
 						class="text-white/80 transition-colors hover:text-white"
 						onclick={() => (isMenuOpen = false)}
 					>
