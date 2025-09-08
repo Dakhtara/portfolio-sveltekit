@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { Menu, SquareMenu, X } from '@lucide/svelte';
+	import { SquareMenu, X } from '@lucide/svelte';
 	import Button from '../Button.svelte';
 	import LocaleSwitcher from '../LocaleSwitcher.svelte';
-	import { fade, fly, slide } from 'svelte/transition';
-
+	import { slide } from 'svelte/transition';
+	import * as m from "$lib/paraglide/messages";
 	let isMenuOpen = $state(false);
 </script>
 
@@ -12,13 +12,13 @@
 >
 	<div class="mx-auto max-w-7xl px-6 py-4">
 		<div class="flex items-center justify-between">
-			<p class="text-xl font-bold text-white">Anthony Matignon</p>
+			<a href="/" class="text-xl font-bold text-white">Anthony Matignon</a>
 
 			<nav class="hidden items-center space-x-8 md:flex">
-				<a href="/" class="text-white/80 transition-colors hover:text-white"> Accueil </a>
-				<a href="/#projects" class="text-white/80 transition-colors hover:text-white"> Projets </a>
-				<a href="/#articles" class="text-white/80 transition-colors hover:text-white"> Articles </a>
-				<a href="/#contact" class="text-white/80 transition-colors hover:text-white"> Contact </a>
+				<a href="/" class="text-white/80 transition-colors hover:text-white"> {m.stout_bright_shrimp_fade()} </a>
+				<a href="/#projects" class="text-white/80 transition-colors hover:text-white"> {m.caring_dull_lemur_flip()} </a>
+				<a href="/#articles" class="text-white/80 transition-colors hover:text-white"> {m.yummy_wacky_meerkat_trip()} </a>
+				<a href="/contact" class="text-white/80 transition-colors hover:text-white"> {m.gaudy_level_myna_trim()} </a>
 			</nav>
 
 			<div class="hidden items-center space-x-4 md:flex">
@@ -43,33 +43,33 @@
 						class="text-white/80 transition-colors hover:text-white"
 						onclick={() => (isMenuOpen = false)}
 					>
-						Accueil
+						{m.stout_bright_shrimp_fade()}
 					</a>
 					<a
 						href="/#projects"
 						class="text-white/80 transition-colors hover:text-white"
 						onclick={() => (isMenuOpen = false)}
 					>
-						Projets
+						{m.caring_dull_lemur_flip()}
 					</a>
 					<a
 						href="/#articles"
 						class="text-white/80 transition-colors hover:text-white"
 						onclick={() => (isMenuOpen = false)}
 					>
-						Articles
+						{m.yummy_wacky_meerkat_trip()}
 					</a>
 					<a
 						href="/#contact"
 						class="text-white/80 transition-colors hover:text-white"
 						onclick={() => (isMenuOpen = false)}
 					>
-						Contact
+						{m.gaudy_level_myna_trim()}
 					</a>
 				</nav>
 				<div class="flex items-center space-x-4 border-t border-white/10 pt-4">
 					<LocaleSwitcher />
-					<Button className="py-2 h-auto">Book Meeting</Button>
+					<Button className="py-2 h-auto">{m.gross_mellow_capybara_pray()}</Button>
 				</div>
 			</div>
 		{/if}

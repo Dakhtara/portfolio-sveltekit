@@ -1,7 +1,7 @@
 <script lang="ts">
 	import HeadingSectionAnimation from '../HeadingSectionAnimation.svelte';
-import Skill from './Skill.svelte';
-
+	import Skill from './Skill.svelte';
+	import * as m from '$lib/paraglide/messages';
 	let skills = [
 		{
 			title: 'SvelteKit',
@@ -40,7 +40,10 @@ import Skill from './Skill.svelte';
 
 <section class="px-6 py-25">
 	<div class="mx-auto max-w-4xl">
-		<HeadingSectionAnimation heading="Compétences" subheading="Technologies et compétences que j'utilise régulièrement dans mes projets." />
+		<HeadingSectionAnimation
+			heading={m.known_crisp_lamb_gaze()}
+			subheading={m.hour_polite_okapi_clasp()}
+		/>
 		<div class="grid grid-cols-1 gap-8 md:grid-cols-2">
 			{#each skills as skill}
 				<Skill title={skill.title} level={skill.level} />

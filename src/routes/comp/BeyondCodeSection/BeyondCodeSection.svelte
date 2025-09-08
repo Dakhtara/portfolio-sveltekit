@@ -1,21 +1,21 @@
 <script lang="ts">
 	import HeadingSectionAnimation from '../HeadingSectionAnimation.svelte';
-import BeyondCodeCard from './BeyondCodeCard.svelte';
-
+	import BeyondCodeCard from './BeyondCodeCard.svelte';
+	import * as m from '$lib/paraglide/messages';
 	const interests = [
 		{
 			title: 'CrossFit',
-			description: "Passionné par le sport et l'entraînement à haute intensité.",
+			description: m.slimy_raw_lynx_conquer(),
 			icon: '🏋️'
 		},
 		{
-			title: 'Production musicale',
-			description: 'Création de musique électronique et expérimentation avec le design sonore.',
+			title: m.misty_crisp_zebra_hack(),
+			description: m.hour_each_ocelot_aspire(),
 			icon: '🎵'
 		},
 		{
 			title: 'Gaming',
-			description: "Des FPS aux RPG, pour la détente et l'évasion.",
+			description: m.awful_salty_husky_snip(),
 			icon: '🎮'
 		}
 	];
@@ -23,7 +23,10 @@ import BeyondCodeCard from './BeyondCodeCard.svelte';
 
 <section class="px-6 py-25">
 	<div class="mx-auto max-w-4xl">
-		<HeadingSectionAnimation heading="Au-delà du code 🚀" subheading="Ce qui me passionne en dehors du code." />
+		<HeadingSectionAnimation
+			heading={m.gaudy_known_panda_view()}
+			subheading={m.neat_fuzzy_emu_feast()}
+		/>
 		<div class="grid grid-cols-1 gap-6 md:grid-cols-3">
 			{#each interests as interest, index}
 				<BeyondCodeCard {...interest} />

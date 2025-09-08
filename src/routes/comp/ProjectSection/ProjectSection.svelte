@@ -1,13 +1,14 @@
 <script lang="ts">
 	import HeadingSectionAnimation from '../HeadingSectionAnimation.svelte';
 	import Project from './Project.svelte';
+	import * as m from '$lib/paraglide/messages';
 </script>
 
 <section class="px-6 py-24">
 	<div class="mx-auto max-w-7xl">
 		<HeadingSectionAnimation
-			heading="Mes projets"
-			subheading="Une sélection de projets qui mettent en avant mon expertise en développement web."
+			heading={m.teary_salty_shrimp_flow()}
+			subheading={m.bold_east_zebra_greet()}
 		/>
 
 		<div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
