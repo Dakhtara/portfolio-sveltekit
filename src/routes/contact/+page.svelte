@@ -1,9 +1,15 @@
 <script lang="ts">
 	import Button from '$lib/components/Button.svelte';
-	import { Check } from '@lucide/svelte';
+	import { Check, Send } from '@lucide/svelte';
+    import * as m from '$lib/paraglide/messages';
 
 	let submitted = $state(false);
 </script>
+
+<svelte:head>
+    <title>Contact - Anthony Matignon</title>
+    <meta name="description" content={m.that_curly_anteater_sew()} />
+</svelte:head>
 
 <section class="relative overflow-hidden pt-32 pb-20">
 	<div class="absolute inset-0">
@@ -22,11 +28,10 @@
 		<h1
 			class="mb-6 bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-5xl font-bold text-transparent md:text-7xl"
 		>
-			Get In Touch
+			{m.light_best_bee_support()}
 		</h1>
 		<p class="mx-auto max-w-2xl text-xl leading-relaxed text-gray-400">
-			Ready to bring your ideas to life? Let's discuss your next project and create something
-			amazing together.
+			{m.helpful_any_pug_pride()}
 		</p>
 	</div>
 </section>
@@ -35,20 +40,20 @@
 	<div class="mx-auto max-w-6xl px-6">
 		<div>
 			<div class="rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
-				<h2 class="mb-6 text-3xl font-bold">Envoyer un message</h2>
+				<h2 class="mb-6 text-3xl font-bold">{m.broad_large_slug_gasp()}</h2>
 				{#if submitted}
 					<div class="py-12 text-center">
 						<Check class="mx-auto mb-4 size-16 text-green-500" />
-						<h3 class="mb-2 text-2xl font-semibold">Message envoyé !</h3>
+						<h3 class="mb-2 text-2xl font-semibold">{m.slow_vexed_kangaroo_drop()}</h3>
 						<p class="text-gray-400">
-							Merci de m'avoir contacté. Je vous répondrai dès que possible.
+							{m.gross_icy_sheep_agree()}
 						</p>
 					</div>
 				{:else}
 					<form class="space-y-6">
 						<div class="grid gap-4 md:grid-cols-2">
 							<div>
-								<label for="name" class="mb-2 block text-sm font-medium">Prénom</label>
+								<label for="name" class="mb-2 block text-sm font-medium">{m.wise_only_shark_trip()}</label>
 								<input
 									type="text"
 									id="name"
@@ -58,7 +63,7 @@
 								/>
 							</div>
 							<div>
-								<label for="email" class="mb-2 block text-sm font-medium">Email</label>
+								<label for="email" class="mb-2 block text-sm font-medium">{m.glad_polite_javelina_buy()}</label>
 								<input
 									type="email"
 									id="email"
@@ -69,7 +74,7 @@
 							</div>
 
 							<div>
-								<label for="subject" class="mb-2 block text-sm font-medium">Sujet</label>
+								<label for="subject" class="mb-2 block text-sm font-medium">{m.crisp_tiny_shark_drip()}</label>
 								<input
 									type="text"
 									id="subject"
@@ -79,7 +84,7 @@
 								/>
 							</div>
 							<div>
-								<label for="message" class="mb-2 block text-sm font-medium">Message</label>
+								<label for="message" class="mb-2 block text-sm font-medium">{m.free_bald_quail_bump()}</label>
 								<textarea
 									id="message"
 									name="message"
@@ -90,27 +95,27 @@
 							</div>
 						</div>
 
+						<input type="text" name="bot-field" class="hidden" />
 						<Button
 							type="submit"
-							class="w-full rounded-xl bg-gradient-to-r from-orange-500 to-pink-500 py-3 font-semibold text-white transition-all duration-300 hover:from-orange-600 hover:to-pink-600"
+							class="w-full cursor-pointer flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-orange-500 to-pink-500 py-3 font-semibold text-white transition-all duration-300 hover:from-orange-600 hover:to-pink-600"
 							onclick={() => (submitted = true)}
 						>
-							Envoyer
+						 <Send class="size-6" />	{m.known_heroic_anaconda_dash()}
 						</Button>
 					</form>
 				{/if}
 			</div>
 		</div>
 		<div
-			class="rounded-xl mt-8 border border-green-500/20 bg-gradient-to-r from-green-500/10 to-emerald-500/10 p-6"
+			class="mt-8 rounded-xl border border-green-500/20 bg-gradient-to-r from-green-500/10 to-emerald-500/10 p-6"
 		>
 			<div class="mb-2 flex items-center gap-3">
 				<div class="h-3 w-3 animate-pulse rounded-full bg-green-500"></div>
-				<h3 class="font-semibold text-green-400">Disponible pour de nouveaux projets</h3>
+				<h3 class="font-semibold text-green-400">{m.vivid_large_gorilla_swim()}</h3>
 			</div>
 			<p class="text-sm text-gray-300">
-                Je suis actuellement ouvert à de nouvelles opportunités et collaborations. N'hésitez
-                pas à me contacter pour discuter de votre projet.
+				{m.bright_quick_butterfly_forgive()}
 			</p>
 		</div>
 	</div>
