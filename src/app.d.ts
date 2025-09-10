@@ -10,4 +10,10 @@ declare global {
 	}
 }
 
+declare module '$env/static/private' {
+		const NTFY_API_URL: string;
+		const NTFY_TOPIC: string;
+		const NTFY_AUTH_TOKEN: string;
+}
+
 export {};

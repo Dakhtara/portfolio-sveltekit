@@ -1,14 +1,16 @@
 <script lang="ts">
 	import Button from '$lib/components/Button.svelte';
 	import { Check, Send } from '@lucide/svelte';
-    import * as m from '$lib/paraglide/messages';
+	import * as m from '$lib/paraglide/messages';
+	import { enhance } from '$app/forms';
+	import type { PageProps } from './$types';
 
-	let submitted = $state(false);
+	let { form }: PageProps = $props();
 </script>
 
 <svelte:head>
-    <title>Contact - Anthony Matignon</title>
-    <meta name="description" content={m.that_curly_anteater_sew()} />
+	<title>Contact - Anthony Matignon</title>
+	<meta name="description" content={m.that_curly_anteater_sew()} />
 </svelte:head>
 
 <section class="relative overflow-hidden pt-32 pb-20">
@@ -41,7 +43,7 @@
 		<div>
 			<div class="rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
 				<h2 class="mb-6 text-3xl font-bold">{m.broad_large_slug_gasp()}</h2>
-				{#if submitted}
+				{#if form?.success}
 					<div class="py-12 text-center">
 						<Check class="mx-auto mb-4 size-16 text-green-500" />
 						<h3 class="mb-2 text-2xl font-semibold">{m.slow_vexed_kangaroo_drop()}</h3>
@@ -50,10 +52,12 @@
 						</p>
 					</div>
 				{:else}
-					<form class="space-y-6">
+					<form class="space-y-6" method="POST" use:enhance>
 						<div class="grid gap-4 md:grid-cols-2">
 							<div>
-								<label for="name" class="mb-2 block text-sm font-medium">{m.wise_only_shark_trip()}</label>
+								<label for="name" class="mb-2 block text-sm font-medium"
+									>{m.wise_only_shark_trip()}</label
+								>
 								<input
 									type="text"
 									id="name"
@@ -63,7 +67,9 @@
 								/>
 							</div>
 							<div>
-								<label for="email" class="mb-2 block text-sm font-medium">{m.glad_polite_javelina_buy()}</label>
+								<label for="email" class="mb-2 block text-sm font-medium"
+									>{m.glad_polite_javelina_buy()}</label
+								>
 								<input
 									type="email"
 									id="email"
@@ -74,7 +80,9 @@
 							</div>
 
 							<div>
-								<label for="subject" class="mb-2 block text-sm font-medium">{m.crisp_tiny_shark_drip()}</label>
+								<label for="subject" class="mb-2 block text-sm font-medium"
+									>{m.crisp_tiny_shark_drip()}</label
+								>
 								<input
 									type="text"
 									id="subject"
@@ -84,7 +92,9 @@
 								/>
 							</div>
 							<div>
-								<label for="message" class="mb-2 block text-sm font-medium">{m.free_bald_quail_bump()}</label>
+								<label for="message" class="mb-2 block text-sm font-medium"
+									>{m.free_bald_quail_bump()}</label
+								>
 								<textarea
 									id="message"
 									name="message"
@@ -95,13 +105,13 @@
 							</div>
 						</div>
 
-						<input type="text" name="bot-field" class="hidden" />
+						<input type="text" name="lastname" class="hidden" />
 						<Button
 							type="submit"
-							class="w-full cursor-pointer flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-orange-500 to-pink-500 py-3 font-semibold text-white transition-all duration-300 hover:from-orange-600 hover:to-pink-600"
-							onclick={() => (submitted = true)}
+							class="flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-orange-500 to-pink-500 py-3 font-semibold text-white transition-all duration-300 hover:from-orange-600 hover:to-pink-600"
 						>
-						 <Send class="size-6" />	{m.known_heroic_anaconda_dash()}
+							<Send class="size-6" />
+							{m.known_heroic_anaconda_dash()}
 						</Button>
 					</form>
 				{/if}
