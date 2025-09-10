@@ -7,6 +7,7 @@
 	import { browser } from '$app/environment';
 
     import * as m from "$lib/paraglide/messages";
+	import { localizeHref } from '$lib/paraglide/runtime';
 
     let heading: HTMLHeadingElement;
 	let subheading: HTMLSpanElement;
@@ -88,7 +89,7 @@
 			</p>
 			<div bind:this={buttonContainer} class="flex flex-col items-center justify-center gap-3 sm:flex-row">
 				<Button>{m.any_stale_samuel_buzz()}</Button>
-				<Button variant="ghost">{m.blue_bland_antelope_thrive()}</Button>
+				<Button href={localizeHref('/contact')} variant="ghost">{m.blue_bland_antelope_thrive()}</Button>
 			</div>
 		</div>
 	</div>

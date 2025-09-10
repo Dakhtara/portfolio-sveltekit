@@ -1,7 +1,8 @@
 <script lang="ts">
 	import 'shiki/themes/catppuccin-macchiato.mjs';
 	import { format } from 'date-fns';
-	let { data } = $props();
+	import type { PageProps } from './$types';
+	let { data }: PageProps = $props();
 </script>
 
 <div class="mx-auto max-w-2xl lg:px-8 py-24">

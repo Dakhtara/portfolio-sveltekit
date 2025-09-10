@@ -6,6 +6,9 @@ type Article = {
     title: string;
     description: string;
     date: string;
+    readTime?: string;
+    category?: string;
+    tags?: string[];
     content: {
         html: string;
         body: string;
@@ -17,6 +20,9 @@ type ArticleMetadata = {
     title: string;
     description: string;
     date: string;
+    readTime?: string;
+    category?: string;
+    tags?: string[];
 };
 
 export default async function ListArticles(): Promise<Article[]> {

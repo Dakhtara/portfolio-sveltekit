@@ -4,6 +4,8 @@ description: "Astro devient de plus en plus populaires. Mais à quoi ca sert et 
 slug: "css-grid"
 date: "2024-05-21"
 readTime: "3 min"
+category: "Astro"
+tags: ["Astro", "Framework", "Static site"]
 ---
 
 Astro est un framework comme on peut en voir dans le style de Nextjs, Nuxt ou encore Sveltekit.

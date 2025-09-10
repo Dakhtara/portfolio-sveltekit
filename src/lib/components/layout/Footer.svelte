@@ -13,11 +13,11 @@
         <p class="text-white/60 mb-8 text-lg">{m.mean_odd_parrot_honor()}</p>
 
         <div class="flex justify-center gap-3 mb-8">
-            <Button href="https://github.com/Dakhtara" target="_blank" className="py-2 px-2 h-auto flex items-center gap-3" variant="outline">
+            <Button href="https://github.com/Dakhtara" target="_blank" class="py-2 px-2 h-auto flex items-center gap-3" variant="outline">
                 <Github />
                 Github
             </Button>
-            <Button href="https://www.linkedin.com/in/anthonymatignon/" target="_blank" className="py-2 px-2 h-auto flex items-center gap-3" variant="outline">
+            <Button href="https://www.linkedin.com/in/anthonymatignon/" target="_blank" class="py-2 px-2 h-auto flex items-center gap-3" variant="outline">
                 <Linkedin />
                 LinkedIn
             </Button>
