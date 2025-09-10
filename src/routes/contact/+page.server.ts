@@ -1,12 +1,16 @@
 import { Notify } from '$lib/server/ntfy/Notify';
+import Recaptcha from '$lib/server/recaptcha/Recaptcha.js';
 import z from 'zod';
+
+export const prerender = false;
 
 const Schema = z.object({
 	name: z.string().min(1),
 	email: z.email(),
 	subject: z.string().min(1),
 	message: z.string().min(1),
-	lastname: z.string().optional() // honeypot field
+	lastname: z.string().optional(), // honeypot field
+	token: z.string().min(1)
 });
 
 export const actions = {
@@ -27,7 +31,14 @@ export const actions = {
 			return { success: false, error: 'All fields are required.' };
 		}
 
-		const { name, email, subject, message } = parsed.data;
+		const { name, email, subject, message, token } = parsed.data;
+
+        try {
+            Recaptcha.verify(token);
+        } catch (error) {
+            console.error('reCAPTCHA verification error:', error);
+            return { success: false, error: 'reCAPTCHA verification failed. Please try again.' };
+        }
 
 		// Send notification using ntfy
 		await Notify.send(

@@ -14,6 +14,11 @@ declare module '$env/static/private' {
 		const NTFY_API_URL: string;
 		const NTFY_TOPIC: string;
 		const NTFY_AUTH_TOKEN: string;
+		const RECAPTCHA_PRIVATE_KEY: string;
+}
+
+declare module '$env/static/public' {
+		const PUBLIC_RECAPTCHA_SITE_KEY: string;
 }
 
 export {};

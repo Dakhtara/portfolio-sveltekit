@@ -4,13 +4,30 @@
 	import * as m from '$lib/paraglide/messages';
 	import { enhance } from '$app/forms';
 	import type { PageProps } from './$types';
-
+	import { PUBLIC_RECAPTCHA_SITE_KEY } from '$env/static/public';
+	import type { SubmitFunction } from '@sveltejs/kit';
 	let { form }: PageProps = $props();
+
+	let token: string | null = null;
+	const onSubmit: SubmitFunction = async (event) => {
+		if (token == null) {
+			event.cancel();
+
+			grecaptcha.ready(async () => {
+				token = await grecaptcha.execute(PUBLIC_RECAPTCHA_SITE_KEY, { action: 'submit' });
+				setTimeout(() => event.formElement.requestSubmit());
+			});
+
+			return;
+		}
+		event.formData.append('token', token);
+	};
 </script>
 
 <svelte:head>
 	<title>Contact - Anthony Matignon</title>
 	<meta name="description" content={m.that_curly_anteater_sew()} />
+	<script src="https://www.google.com/recaptcha/api.js?render={PUBLIC_RECAPTCHA_SITE_KEY}"></script>
 </svelte:head>
 
 <section class="relative overflow-hidden pt-32 pb-20">
@@ -52,7 +69,7 @@
 						</p>
 					</div>
 				{:else}
-					<form class="space-y-6" method="POST" use:enhance>
+					<form class="space-y-6" method="POST" use:enhance={onSubmit}>
 						<div class="grid gap-4 md:grid-cols-2">
 							<div>
 								<label for="name" class="mb-2 block text-sm font-medium"
@@ -106,6 +123,10 @@
 						</div>
 
 						<input type="text" name="lastname" class="hidden" />
+
+                        {#if form?.error}
+                            <p class="text-sm text-red-500">{form.error}</p>
+                        {/if}
 						<Button
 							type="submit"
 							class="flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-orange-500 to-pink-500 py-3 font-semibold text-white transition-all duration-300 hover:from-orange-600 hover:to-pink-600"
