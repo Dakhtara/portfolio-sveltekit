@@ -1,5 +1,6 @@
 import { Notify } from '$lib/server/ntfy/Notify';
 import Recaptcha from '$lib/server/recaptcha/Recaptcha.js';
+import { checkMessageValidity } from '$lib/utils/FirewallMessage';
 import z from 'zod';
 
 export const prerender = false;
@@ -33,12 +34,17 @@ export const actions = {
 
 		const { name, email, subject, message, token } = parsed.data;
 
+		if (checkMessageValidity(message) === false || checkMessageValidity(subject) === false) {
+			//This is scam so we just send success
+			return { success: true };
+		}
+
         try {
-            Recaptcha.verify(token);
-        } catch (error) {
-            console.error('reCAPTCHA verification error:', error);
-            return { success: false, error: 'reCAPTCHA verification failed. Please try again.' };
-        }
+			Recaptcha.verify(token);
+		} catch (error) {
+			console.error('reCAPTCHA verification error:', error);
+			return { success: false, error: 'reCAPTCHA verification failed. Please try again.' };
+		}
 
 		// Send notification using ntfy
 		await Notify.send(

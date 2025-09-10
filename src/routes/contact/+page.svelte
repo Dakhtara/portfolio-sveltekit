@@ -13,7 +13,9 @@
 		if (token == null) {
 			event.cancel();
 
+            // @ts-expect-error
 			grecaptcha.ready(async () => {
+                // @ts-expect-error
 				token = await grecaptcha.execute(PUBLIC_RECAPTCHA_SITE_KEY, { action: 'submit' });
 				setTimeout(() => event.formElement.requestSubmit());
 			});
