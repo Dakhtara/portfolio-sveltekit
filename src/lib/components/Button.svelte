@@ -5,7 +5,7 @@
 
 	type Props = {
 		children: Snippet;
-		variant?: 'white' | 'outline' | 'ghost';
+		variant?: 'default' | 'white' | 'outline' | 'ghost';
 		className?: string;
 	} & HTMLButtonAttributes &
 		HTMLAnchorAttributes;
@@ -14,6 +14,7 @@
 
 	let classes = {
 		base: 'h-12 cursor-pointer inline-block rounded-lg px-6 py-3 font-medium transition-all duration-200',
+		default: 'border',
 		white: 'bg-white text-black hover:bg-white/90',
 		outline: 'border py-2 border-white/20 bg-transparent text-white hover:bg-white/5',
 		ghost: 'bg-transparent rounded-lg text-white hover:bg-white/5'
