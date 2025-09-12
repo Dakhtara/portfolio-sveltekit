@@ -6,13 +6,14 @@
 	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
 
-    import * as m from "$lib/paraglide/messages";
-	import { localizeHref } from '$lib/paraglide/runtime';
+	import * as m from '$lib/paraglide/messages';
+	import { getLocale, localizeHref } from '$lib/paraglide/runtime';
+	import { Download } from '@lucide/svelte';
 
-    let heading: HTMLHeadingElement;
+	let heading: HTMLHeadingElement;
 	let subheading: HTMLSpanElement;
-    let buttonContainer: HTMLDivElement;
-    let description: HTMLParagraphElement;
+	let buttonContainer: HTMLDivElement;
+	let description: HTMLParagraphElement;
 	onMount(() => {
 		if (!browser) {
 			return;
@@ -30,29 +31,29 @@
 
 		gsap.from(subheading, {
 			duration: 1.2,
-            delay: 1,
+			delay: 1,
 			y: -40,
 			opacity: 0,
 			stagger: 0.1,
 			ease: 'power4.out'
 		});
 
-        gsap.from(description, {
-            duration: 2,
-            delay: 1.5,
-            y: -40,
-            opacity: 0,
-            ease: 'power4.out'
-        })
+		gsap.from(description, {
+			duration: 2,
+			delay: 1.5,
+			y: -40,
+			opacity: 0,
+			ease: 'power4.out'
+		});
 
-        gsap.from(buttonContainer, {
-            duration: 2,
-            y: 40,
-            delay: 1.5,
-            opacity: 0,
-            stagger: 1,
-            ease: 'power4.out'
-        })
+		gsap.from(buttonContainer, {
+			duration: 2,
+			y: 40,
+			delay: 1.5,
+			opacity: 0,
+			stagger: 1,
+			ease: 'power4.out'
+		});
 	});
 </script>
 
@@ -77,19 +78,32 @@
 			</h1>
 			<p
 				bind:this={subheading}
-				class="text-5xl bg-gradient-to-r from-orange-400 via-red-400 to-cyan-400 bg-clip-text text-transparent"
+				class="bg-gradient-to-r from-orange-400 via-red-400 to-cyan-400 bg-clip-text text-5xl text-transparent"
 			>
 				{m.merry_blue_coyote_slide()}
-        </p>
+			</p>
 			<p
-                bind:this={description}
+				bind:this={description}
 				class="mx-auto mt-4 mb-10 max-w-2xl text-lg leading-relaxed font-light text-pretty text-white/70 md:text-xl"
 			>
 				{m.sour_sound_vole_enjoy()}
 			</p>
-			<div bind:this={buttonContainer} class="flex flex-col items-center justify-center gap-3 sm:flex-row">
-				<Button>{m.any_stale_samuel_buzz()}</Button>
-				<Button href={localizeHref('/contact')} variant="ghost">{m.blue_bland_antelope_thrive()}</Button>
+			<div
+				bind:this={buttonContainer}
+				class="flex flex-col items-center justify-center gap-3 sm:flex-row"
+			>
+				<!-- <Button>{m.any_stale_samuel_buzz()}</Button> -->
+				<Button
+					data-umami-event="download-cv"
+					download="CV Anthony Matignon"
+					href={getLocale() === 'en' ? '/CV EN light.pdf' : '/CV FR light.pdf'}
+				>
+					<Download class="size-4 animate-bounce" />
+					CV
+				</Button>
+				<Button href={localizeHref('/contact')} variant="ghost"
+					>{m.blue_bland_antelope_thrive()}</Button
+				>
 			</div>
 		</div>
 	</div>

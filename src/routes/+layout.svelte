@@ -15,7 +15,7 @@
 		<script
 			defer
 			src="https://umami.amatignon.fr/script.js"
-			data-website-id="57bc1b7b-6e09-43f9-8fad-e8509503f25e"
+			data-website-id="3ef2b79b-ecae-4fd1-8a47-26fee6ab95e0"
 		></script>
 		<script
 			defer
