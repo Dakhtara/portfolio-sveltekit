@@ -18,7 +18,7 @@
 
 			<nav class="hidden items-center space-x-8 md:flex">
 				<a href={localizeHref('/')} class="text-white/80 transition-colors hover:text-white"> {m.stout_bright_shrimp_fade()} </a>
-				<a href={localizeHref('/#projects')} class="text-white/80 transition-colors hover:text-white"> {m.caring_dull_lemur_flip()} </a>
+				<!-- <a href={localizeHref('/#projects')} class="text-white/80 transition-colors hover:text-white"> {m.caring_dull_lemur_flip()} </a> -->
 				<a href={localizeHref('/articles')} class="text-white/80 transition-colors hover:text-white"> {m.yummy_wacky_meerkat_trip()} </a>
 				<a href={localizeHref('/contact')} class="text-white/80 transition-colors hover:text-white"> {m.gaudy_level_myna_trim()} </a>
 			</nav>
@@ -47,13 +47,13 @@
 					>
 						{m.stout_bright_shrimp_fade()}
 					</a>
-					<a
+					<!-- <a
 						href={localizeHref('/#projects')}
 						class="text-white/80 transition-colors hover:text-white"
 						onclick={() => (isMenuOpen = false)}
 					>
 						{m.caring_dull_lemur_flip()}
-					</a>
+					</a> -->
 					<a
 						href={localizeHref('/articles')}
 						class="text-white/80 transition-colors hover:text-white"
