@@ -50,5 +50,22 @@
 	"great_few_gibbon_bake": "All articles",
 	"ok_bold_elk_push": "articles",
 	"busy_ago_jay_relish": "Search article...",
-	"sleek_aloof_toad_bloom": "All"
+	"sleek_aloof_toad_bloom": "All",
+	"gross_even_trout_loop": "Complete overhaul of the Crossfit des Sables d'Olonne website.\nTransition from Wordpress to an Astro site with Contentful\nThis mainly involves a complete redesign of the site.\nThe libraries used are primarily Astro for site generation, TailwindCSS for design, and Contentful for managing certain custom blocks and pages.",
+	"alert_watery_warbler_jest": "This project started with the desire to revamp the Afterlife website. The previous version had significant room for improvement in certain aspects.\nI began by listing the features and what could be improved. Then I created the mockups with the ideas, and finally built the website.\nThis project includes ThreeJS, which allows for creating 3D objects and animations.",
+	"sleek_topical_rooster_laugh": "For the need to develop an internal tool, I intervened to continue the development of their solution.\nIt involved creating new routes for their API as well as improving the user management interface.",
+	"bold_heroic_cuckoo_laugh": "Creation of a personal music player with playlist management.\nThis project is built with Vue, an Express server, and stream management for music files.",
+	"new_green_anaconda_arise": "Music Player",
+	"that_tense_shrimp_aspire": "Enterprise facilitating CSR for all.\n Development of the application and the showcase site.\n SAAS for companies to manage their repositories and indicators.\n The site runs on Symfony and React hybrid.",
+	"stock_heroic_gibbon_push": "Paris - Full Remote",
+	"loose_least_cow_cry": "Sept 2023 - Present",
+	"tiny_nice_moose_dial": "December 2021 - May 2023",
+	"dirty_awful_orangutan_pride": "Farmitoo is an online sales platform for agricultural products. As a member of the technical team, I was able to work on several aspects of the site, both in the partner area and the shop.\r I also helped develop the existing code.",
+	"loose_safe_kitten_believe": "August 2018 - November 2021",
+	"lucky_just_frog_clasp": "Les Sables d'Olonne - Hybride",
+	"misty_frail_monkey_care": "Easysystème is the central product at Codes Rousseau, it manages the member driving schools, manages the subscriptions and credits of the driving schools, offers the code series to the students.\rThis product has existed for several years and in the need to orient the site towards an API, a large part of the project had to be reviewed in these principles.\rSeveral Symfony components were added in order to modernize the whole.",
+	"sweet_topical_puffin_smile": "August 2017 - July 2018",
+	"least_quick_cat_devour": "Creation of APIs under Symfony 2/3 with Front-End under VueJS and Angular (2+).\rCreation of showcase sites and contact sites for various external clients.",
+	"kind_any_stingray_lock": "January 2016 - May 2017",
+	"grassy_tiny_bulldog_lift": "Creation and maintenance of websites under Symfony 2.\rMigration of the voyagebohemechic site from Wordpress to Symfony 2.\rDevelopment of an internal e-commerce solution under Symfony."
 }

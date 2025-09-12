@@ -5,44 +5,42 @@
 
 	const experiences = [
 		{
-			title: 'Senior Developer',
+			title: 'Senior Developer Front-end',
 			company: 'Zei',
-			period: "Sept 2023 - Aujourd'hui",
-			location: 'Paris - Full Télétravail',
-			description:
-				"Entreprise facilitant la RSE pour tous.\n Développement de l'application et le site vitrine.\n SAAS pour les entreprises afin de gérer leur référentiels et indicateurs.\n Le site tourne sous Symfony et React  hybride."
+			period: m.loose_least_cow_cry(),
+			location: m.stock_heroic_gibbon_push(),
+			description: m.that_tense_shrimp_aspire()
 		},
 		{
-			title: 'Développeur Full-Stack',
+			title: 'Full-Stack Developer',
 			company: 'Farmitoo',
-			period: 'Décembre 2021 - Mai 2023',
-			location: 'Paris - Full Télétravail',
-			description:
-				"Farmitoo est une plateforme de vente en ligne de produits agricoles. En renforcement dans l'équipe technique, j'ai pu intervenir sur plusieurs aspects du site. Que ce soit pour l'espace partenaire ou pour la partie shop.\r J'ai aussi contribué à faire évoluer le code existant."
+			period: m.tiny_nice_moose_dial(),
+			location: m.stock_heroic_gibbon_push(),
+			description: m.dirty_awful_orangutan_pride()
 		},
 		{
 			title: 'Frontend Developer',
 			company: 'Codes Rousseau',
-			period: 'Aout 2018 - Novembre 2021',
-			location: "Les Sables d'Olonne - Hybride",
+			period: m.loose_safe_kitten_believe(),
+			location: m.lucky_just_frog_clasp(),
 			description:
-				"Easysystème est le produit central chez Codes Rousseau, il gère les auto-écoles adhérentes, gère les abonnements et crédits des auto-ecoles, propose les séries de code aux élèves.\rCe produit existant depuis plusieurs années et dans le besoin d'orienter le site vers une API, une grande partie du projet a du être revu dans ces principes.\rPlusieurs composants Symfony ont été ajoutés afin de moderniser l'ensemble."
+				m.misty_frail_monkey_care()
 		},
 		{
-			title: 'Développeur Full-Stack',
+			title: 'Full-Stack Developer',
 			company: 'Digital Garden',
-			period: 'Aout 2017 - Juillet 2018',
+			period: m.sweet_topical_puffin_smile(),
 			location: 'Nantes',
 			description:
-				"Création d'API sous Symfony 2/3 avec Front-End sous VueJS et Angular (2+).\rCréation de sites vitrine et sites de contact pour différents clients externe"
+				m.least_quick_cat_devour()
 		},
 		{
-			title: 'Développeur Full-Stack',
+			title: 'Full-Stack Developer',
 			company: '37 Deux',
-			period: 'Janvier 2016 - Mai 2017',
+			period: m.kind_any_stingray_lock(),
 			location: "Les Sables d'Olonne",
 			description:
-				"Création et maintenance de sites internet sous Symfony 2.\rMigration du site voyagebohemechic de Wordpress vers Symfony 2.\rDéveloppement d'une solution e-commerce en interne sous Symfony."
+				m.grassy_tiny_bulldog_lift()
 		}
 	];
 </script>

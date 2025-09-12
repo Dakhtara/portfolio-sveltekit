@@ -50,5 +50,22 @@
 	"great_few_gibbon_bake": "Tous les articles",
 	"ok_bold_elk_push": "articles",
 	"busy_ago_jay_relish": "Rechercher un article...",
-	"sleek_aloof_toad_bloom": "Tous"
+	"sleek_aloof_toad_bloom": "Tous",
+	"gross_even_trout_loop": "Reprise complète du site Crossfit des Sables d'Olonne.\nPassage d'un Wordpress a un site Astro avec Contentful\nIl s'agit principalement d'un redesign complet du site.\nLes librairies utilisées sont principalement Astro pour la génération du site. TailwindCSS pour le design et Contentful pour la gestion de certains blocs et pages personnalisés.",
+	"alert_watery_warbler_jest": "C'est un projet qui a démarré par l'envie de revoir le site internet. La version était très perfectible sur certains aspects.\nJ'ai démarré par lister les fonctionnalités et ce qui pouvait être amélioré. Ensuite j'ai crée les maquettes avec les idées, pour au final crée le site web.\nCe projet contient ThreeJS qui permet de créer des objets et animations en 3D.",
+	"sleek_topical_rooster_laugh": "Pour le besoin de développement d'un outil en interne, je suis intervenu pour continuer le développement de leur solution.\nIl s'agissait de créer de nouvelles routes pour leur API ainsi que d'améliorer l'interface de gestion des utilisateurs.",
+	"bold_heroic_cuckoo_laugh": "Création d'un lecteur de musique personnel avec une gestion de playlist.\nCe projet est crée sous Vue avec un serveur express et une gestion des stream pour les fichiers musicaux",
+	"new_green_anaconda_arise": "Lecteur de musique",
+	"that_tense_shrimp_aspire": "Entreprise facilitant la RSE pour tous.\n Développement de l'application et le site vitrine.\n SAAS pour les entreprises afin de gérer leur référentiels et indicateurs.\n Le site tourne sous Symfony et React  hybride.",
+	"stock_heroic_gibbon_push": "Paris - Full Télétravail",
+	"loose_least_cow_cry": "Sept 2023 - Aujourd'hui",
+	"tiny_nice_moose_dial": "Décembre 2021 - Mai 2023",
+	"dirty_awful_orangutan_pride": "Farmitoo est une plateforme de vente en ligne de produits agricoles. En renforcement dans l'équipe technique, j'ai pu intervenir sur plusieurs aspects du site. Que ce soit pour l'espace partenaire ou pour la partie shop.\\r J'ai aussi contribué à faire évoluer le code existant.",
+	"loose_safe_kitten_believe": "Aout 2018 - Novembre 2021",
+	"lucky_just_frog_clasp": "Les Sables d'Olonne - Hybride",
+	"misty_frail_monkey_care": "Easysystème est le produit central chez Codes Rousseau, il gère les auto-écoles adhérentes, gère les abonnements et crédits des auto-ecoles, propose les séries de code aux élèves.\\rCe produit existant depuis plusieurs années et dans le besoin d'orienter le site vers une API, une grande partie du projet a du être revu dans ces principes.\\rPlusieurs composants Symfony ont été ajoutés afin de moderniser l'ensemble.",
+	"sweet_topical_puffin_smile": "Aout 2017 - Juillet 2018",
+	"least_quick_cat_devour": "Création d'API sous Symfony 2/3 avec Front-End sous VueJS et Angular (2+).\\rCréation de sites vitrine et sites de contact pour différents clients externe",
+	"kind_any_stingray_lock": "Janvier 2016 - Mai 2017",
+	"grassy_tiny_bulldog_lift": "Création et maintenance de sites internet sous Symfony 2.\\rMigration du site voyagebohemechic de Wordpress vers Symfony 2.\\rDéveloppement d'une solution e-commerce en interne sous Symfony."
 }
