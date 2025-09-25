@@ -6,6 +6,7 @@
 	import type { PageProps } from './$types';
 	import { PUBLIC_RECAPTCHA_SITE_KEY } from '$env/static/public';
 	import type { SubmitFunction } from '@sveltejs/kit';
+	import { onDestroy } from 'svelte';
 	let { form }: PageProps = $props();
 
 	let token: string | null = null;
@@ -24,12 +25,21 @@
 		}
 		event.formData.append('token', token);
 	};
+
+	onDestroy(() => {
+		// Remove Grecaptcha script to avoid multiple loading
+		const script = document.querySelector( 'script[data-recaptcha="google"]' );
+		if (script) {
+			script.remove();
+		}
+		token = null;
+	})
 </script>
 
 <svelte:head>
 	<title>Contact - Anthony Matignon</title>
 	<meta name="description" content={m.that_curly_anteater_sew()} />
-	<script src="https://www.google.com/recaptcha/api.js?render={PUBLIC_RECAPTCHA_SITE_KEY}"></script>
+	<script data-recaptcha="google" src="https://www.google.com/recaptcha/api.js?render={PUBLIC_RECAPTCHA_SITE_KEY}"></script>
 </svelte:head>
 
 <section class="relative overflow-hidden pt-32 pb-20">
@@ -57,7 +67,7 @@
 	</div>
 </section>
 
-<section class="py-20">
+<section class="py-8 md:py-20">
 	<div class="mx-auto max-w-6xl px-6">
 		<div>
 			<div class="rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">

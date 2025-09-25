@@ -69,7 +69,7 @@
 						{m.gaudy_level_myna_trim()}
 					</a>
 				</nav>
-				<div class="flex items-center space-x-4 border-t border-white/10 pt-4">
+				<div class="flex items-center mt-4 space-x-4 border-t border-white/10 pt-4">
 					<LocaleSwitcher />
 					<Button className="py-2 h-auto">{m.gross_mellow_capybara_pray()}</Button>
 				</div>
