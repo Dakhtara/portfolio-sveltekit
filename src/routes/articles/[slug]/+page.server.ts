@@ -1,4 +1,5 @@
-import ListArticles from "$lib/articles/ListArticles";
+import ListArticles, { ListArticlesByLang } from "$lib/articles/ListArticles";
+import { getLocale } from "$lib/paraglide/runtime";
 import type { EntryGenerator, PageServerLoad } from "./$types";
 
 export const prerender = true;
@@ -11,7 +12,8 @@ export const entries: EntryGenerator = async () => {
 
 
 export const load: PageServerLoad = async ({ params }) => {
-    const articles = await ListArticles();
+    const locale = getLocale();
+    const articles = await ListArticlesByLang(locale);
     const article = articles.find((a) => a.slug === params.slug);
     if (!article) {
         throw new Error('Article not found');

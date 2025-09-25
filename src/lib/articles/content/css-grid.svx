@@ -6,6 +6,7 @@ date: "2024-05-23"
 readTime: "2 min"
 category: "CSS"
 tags: ["CSS", "Grid", "Layout"]
+lang: "fr"
 ---
 
 ## Comment on définit une grille

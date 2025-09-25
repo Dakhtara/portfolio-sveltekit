@@ -1,0 +1,159 @@
+---
+title: 'NTFY Sveltekit'
+description: 'Personal project to create a web client for the NTFY service. Soon to be released as Open Source.'
+slug: 'ntfy-sveltekit'
+date: '2025-09-25'
+readTime: '8 min'
+category: 'Sveltekit'
+tags: ['SvelteKit', 'JS', 'Framework']
+thumbnail: '/ntfy-sveltekit/homepage.png'
+lang: 'en'
+---
+
+<script lang="ts">
+    import DisclaimerBanner from "$lib/components/DisclaimerBanner.svelte";
+</script>
+
+<DisclaimerBanner slug="ntfy-sveltekit" />
+
+NTFY est un service pour notifier les utilisateurs un peu a n'importe quel moment pour un peu n'importe quoi tant que l'on peut faire une requête HTTP.
+
+J'aime beaucoup ce projet que j'utilise personnellement, mais je n'aimais pas trop l'application web, ni l'application IOS a cause de certaines limitations.
+
+J'ai donc décidé de créer un projet sous sveltekit pour me challenger un peu et d'apporter quelques fonctionnalités supplémentaires.
+
+# NTFY ?
+
+Ntfy est un outil open source permettant d’envoyer des notifications facilement depuis un appel HTTP.
+
+Derrière on peut souscrire à ces messages facilement pour recevoir les notifications.
+
+Le site [ntfy.sh](http://ntfy.sh) permet l’utilisation direct du service ou sinon il peut aussi être auto-hébergé.
+
+Le client qui reçoit les notifs peut être aussi bien sûr desktop via la web ui ou alors via les apps Android et IOS
+
+# Pourquoi faire un client web supplémentaire
+
+Il existe déjà un client web cependant l’installation en PWA est pas complète sur IOS en effet on ne peut pas avoir les notifications.
+
+Aussi l'UI est basé sur du material et n'est pas à mon goût.
+
+J’ai utilisé l’application IOS de NTFY mais celle ci est limite. En effet il est impossible d'afficher des messages en Markdown et il permet uniquement de recevoir des messages.
+
+# MVP
+
+Le MVP définis ici était principalement d’avoir une ui plus moderne et simple ainsi que d’avoir les notifications en PWA et la lecture du markdown.
+
+# Enjeux de ce projet
+
+Les plus gros enjeux étaient d’utiliser sveltekit et de pouvoir souscrire aux flux JSON que NTFY propose pour recevoir les nouveaux messages.
+
+# La stack technique
+
+## Sveltekit
+
+Sveltekit a été le premier choix pour ce projet car ayant déjà de l'expérience dessus, j'étais en terrain connus.
+
+### Remote functions
+
+Mais il n'y a pas longtemps Sveltekit a mis en test les remote functions et je voulais vraiment tester celles-ci
+
+[Les remotes functions](https://svelte.dev/docs/kit/remote-functions) sont des fonctions que l'on appel côté client et qui vont directement intéragir avec le back.
+
+La ou dans un code sans les remotes functions il faudrait :
+
+- Créer le use case (optionnel)
+- Créer une route API back
+- Créer un appel HTTP côté front
+- Gérer la serialisation des données etc.
+
+Avec les remotes functions on réduit cela a 3 étapes :
+
+- Créer le use case (optionnel)
+- Créer la remote function
+- Appeler la remote function côté client
+
+Cela retire donc beaucoup de code a gérer avec des appels API etc.
+
+Exemple pour lister tous les topics
+
+Un fichier data.remote.ts (le .remote.ts est la nomenclature des Remote functions)
+
+```ts
+import { query } from '$app/server';
+import { listAllTopics } from '@/server/repository/TopicsRepository';
+
+export const getTopics = query(async () => {
+	return await listAllTopics();
+});
+```
+
+Dans le fichier précédent je récupère directement les topics via le repository.
+Et ensuite dans un composant svelte voici comment on les récupère
+
+```svelte
+<script lang="ts">
+	import { getTopics } from '../../../routes/topics/data.remote';
+
+	let topics = getTopics();
+</script>
+```
+
+Et donc ensuite notre "topics" contient tous les topics que l'on a en BDD.
+
+## Drizzle et SQLite
+
+Habitué de Prisma, je voulais tester Drizzle qui gagne beaucoup en popularité récemment.
+
+Donc qui dit nouvel ORM dit réaprendre une logique.
+La ou Prisma fait ses requêtes orientés documents, ici Drizzle reprend les fondamentaux du SQL.
+
+Donc on se remet a faire du SQL mais avec des functions (ressemblant à Doctrine)
+
+Exemple d'une requête pour récupérer des topics
+
+```ts
+return await db
+	.select({
+		id: topic.id,
+		name: topic.name,
+		newCount: sql<number>`COUNT(CASE WHEN ${message.id} IS NOT NULL AND ${message.viewed_at} IS NULL THEN 1 END)`,
+		notificationActive: topic.notificationActive
+	})
+	.from(topic)
+	.leftJoin(message, eq(topic.id, message.topicId))
+	.groupBy(topic.id)
+	.orderBy(topic.name);
+```
+
+# Enjeux techniques
+
+## Docker
+
+J'ai l'habitude d'utiliser Docker dans mes projets pour lancer des BDD ou services que j'ai besoin, cependant je n'avais jamais crée mes propres images dans l'espoir de les partager a tout le monde.
+
+C'est une des tâches qui m'a pris le plus de temps, comment généré une image qui va lors du lancement effectuer des taches spécifiques (par exemple les migrations BDD)
+
+## Synchronisation
+
+L'intérêt du service NTFY est tout de même de pouvoir notifier très rapidement (voir instantanément) l'utilisateur.
+Pour ce faire dans la [documentation de NTFY](https://docs.ntfy.sh/subscribe/api/#subscribe-as-json-stream) on voit qu'il y a un flux JSON auquel on peut souscrire par topic afin d'avoir les nouvelles notifications le plus rapidement possible.
+
+Afin d'effectuer cela dans SvelteKit j'ai testé la solution de charger la souscription des topics dans le hooks.server.ts, je ne sais pas encore si cette solution est viable sur le long terme donc peut être que je ferais une update si jamais la méthode à changé.
+
+Donc au niveau usage, à chaque fois qu'un utilisateur ajoute un topic, on souscrit aux changes et si jamais le topic est supprimé on retire l'écoute des changes.
+
+## Notification
+
+Les notifications sont effectués via la Notification API.
+A chaque fois qu'un utilisateur arrive et que les Notifications ne sont pas actives, on propose a l'utilisateur (de manière non intrusive) de les activer.
+Lorsqu'on les actives si la demande est concluante alors on install le service-worker qui tournera en tâche de fond.
+
+Ensuite côté front on récupère sa souscription qu'on va enregistrer en BDD afin de pouvoir lui envoyer directement des Notifications en background.
+
+# Roadmap
+
+- [ ] Pouvoir envoyer des notifications (pour le moment c’est juste de la souscription)
+- [ ] Régler quelles priorités trigger des notifications
+- [ ] Pouvoir gérer les souscriptions aux notifications par device
+- [ ] Changer le système de ping sur le client, au lieu de faire un afterNavigate, utiliser un SSE plutôt

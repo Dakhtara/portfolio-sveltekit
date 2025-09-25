@@ -5,7 +5,6 @@
 	import type { PageProps } from './$types';
 	import * as m from '$lib/paraglide/messages';
 	import { cn } from '$lib/utils/cn';
-
 	let { data }: PageProps = $props();
 
 	let searchTerm = $state('');
@@ -179,73 +178,11 @@
 					<div class="mb-4 text-white/40">
 						<Search class="mx-auto mb-4 h-12 w-12" />
 					</div>
-					<h3 class="mb-2 text-xl font-semibold text-white/60">Aucun article trouvé</h3>
-					<p class="text-white/40">Essayez d'ajuster vos critères de recherche ou de filtrage</p>
+					<h3 class="mb-2 text-xl font-semibold text-white/60">{m.spare_petty_gecko_aim()}</h3>
+					<p class="text-white/40">{m.male_clear_snake_radiate()}</p>
 				</div>
 			{/if}
-			<!-- {regularArticles.map((article, index) => (
-              <Card
-                class="group hover:shadow-lg hover:shadow-cyan-500/5 transition-all duration-300 bg-white/[0.02] border-white/10 hover:border-white/20 backdrop-blur-sm cursor-pointer"
-              >
-                <CardHeader class="p-6">
-                  <div class="flex flex-col lg:flex-row lg:items-start gap-4">
-                    <div class="flex-1">
-                      <div class="flex items-center gap-3 mb-3">
-                        <Badge variant="outline" class="border-white/20 text-white/60 text-xs">
-                          {article.category}
-                        </Badge>
-                        <span class="text-white/40 text-sm">•</span>
-                        <span class="text-white/50 text-sm flex items-center gap-1">
-                          <Clock class="h-3 w-3" />
-                          {article.readTime}
-                        </span>
-                      </div>
-
-                      <CardTitle class="text-xl font-semibold mb-3 text-white group-hover:text-cyan-400 transition-colors">
-                        {article.title}
-                      </CardTitle>
-
-                      <CardDescription class="text-white/70 text-base leading-relaxed mb-4 line-clamp-2">
-                        {article.excerpt}
-                      </CardDescription>
-
-                      <div class="flex flex-wrap gap-2">
-                        {article.tags.slice(0, 3).map((tag) => (
-                          <Badge
-                            key={tag}
-                            variant="secondary"
-                            class="bg-white/5 text-white/60 hover:bg-white/10 border-0 font-normal text-xs"
-                          >
-                            {tag}
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div class="text-sm text-white/50 lg:text-right flex-shrink-0">
-                      <div class="flex items-center gap-1.5 lg:justify-end mb-1">
-                        <Calendar class="h-3.5 w-3.5" />
-                        {new Date(article.date).toLocaleDateString()}
-                      </div>
-                      <div class="flex items-center gap-1.5 lg:justify-end">
-                        <User class="h-3.5 w-3.5" />
-                        {article.author}
-                      </div>
-                    </div>
-                  </div>
-                </CardHeader>
-              </Card>
-            ))} -->
+			
 		</div>
-
-		<!-- {filteredArticles.length === 0 && (
-            <div class="text-center py-16">
-              <div class="text-white/40 mb-4">
-                <Search class="h-12 w-12 mx-auto mb-4" />
-              </div>
-              <h3 class="text-xl font-semibold text-white/60 mb-2">No articles found</h3>
-              <p class="text-white/40">Try adjusting your search or filter criteria</p>
-            </div>
-          )} -->
 	</div>
 </section>

@@ -6,6 +6,7 @@ date: "2024-05-21"
 readTime: "3 min"
 category: "Astro"
 tags: ["Astro", "Framework", "Static site"]
+lang: "fr"
 ---
 
 Astro est un framework comme on peut en voir dans le style de Nextjs, Nuxt ou encore Sveltekit.
