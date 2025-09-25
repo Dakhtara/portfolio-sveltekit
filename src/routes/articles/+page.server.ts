@@ -4,7 +4,6 @@ import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async () => {
 	const locale = getLocale();
-	console.log(locale);
 	const articles = await ListArticlesByLang(locale);
 	return { articles };
 };
