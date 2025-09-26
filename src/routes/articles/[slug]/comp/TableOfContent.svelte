@@ -49,6 +49,7 @@
 			const scrollPosition = window.scrollY + 200; // Adjust offset as needed
 
 			sections.forEach((section) => {
+                // @ts-expect-error
 				if (section.offsetTop <= scrollPosition) {
 					currentSection = section.id;
 				}

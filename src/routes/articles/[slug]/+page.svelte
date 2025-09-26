@@ -29,7 +29,7 @@
 	<meta property="og:url" content={'https://amatignon.fr/articles/' + data.article.slug} />
 </svelte:head>
 
-<div class="container mx-auto max-w-3xl pt-24 lg:px-8">
+<div class="container mx-auto max-w-3xl pt-24 px-4 lg:px-8">
 	{#if data.article.thumbnail}
 		<div class="relative mb-12">
 			<div class="">
@@ -67,7 +67,7 @@
 		</h1>
 	{/if}
 </div>
-<div class="container mx-auto py-12 lg:px-8">
+<div class="container mx-auto sm:py-12 px-4 lg:px-8">
 	<div class="flex max-w-full gap-8">
 		<TableOfContent markdown={data.article.content.html} />
 

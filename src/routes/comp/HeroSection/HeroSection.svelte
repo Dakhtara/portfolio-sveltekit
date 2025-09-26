@@ -90,7 +90,7 @@
 			</p>
 			<div
 				bind:this={buttonContainer}
-				class="flex flex-col items-center justify-center gap-3 sm:flex-row"
+				class="flex items-center pb-12 justify-center gap-3"
 			>
 				<!-- <Button>{m.any_stale_samuel_buzz()}</Button> -->
 				<Button
