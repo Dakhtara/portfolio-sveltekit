@@ -143,9 +143,6 @@ Ensuite côté front on récupère sa souscription qu'on va enregistrer en BDD a
 ## SSE
 Afin d'avoir accès aux nouveaux messages, j'ai utilisé le SSE pour rafraichir la vue sur la sidenav du nombre de message, mais il faudrait aussi rafraichir la liste des notifications.
 
-
-
-
 # Roadmap
 - [x] Pouvoir envoyer des notifications (pour le moment c’est juste de la souscription) 
 - [ ] Régler quelles priorités trigger des notifications

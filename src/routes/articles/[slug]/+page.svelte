@@ -68,11 +68,11 @@
 	{/if}
 </div>
 <div class="container mx-auto py-12 lg:px-8">
-	<div class="flex gap-8">
+	<div class="flex max-w-full gap-8">
 		<TableOfContent markdown={data.article.content.html} />
 
-		<div class="prose prose-invert prose-h1:mt-18">
+		<article class="prose prose-slate prose-invert max-w-none prose-h1:mt-18 min-w-0 prose-pre:whitespace-pre-wrap prose-code:whitespace-pre-wrap prose-pre:break-words">
 			{@html data.article.content.html}
-		</div>
+		</article>
 	</div>
 </div>
