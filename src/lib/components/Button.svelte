@@ -37,11 +37,11 @@
 </script>
 
 {#if props.href}
-	<a class={cn(classes.base, variantClasses, className, sizeClasses)} {...props}>
+	<a class={cn(classes.base, variantClasses, sizeClasses, className )} {...props}>
 		{@render children()}
 	</a>
 {:else}
-	<button class={cn(classes.base, variantClasses, className)} {...props}>
+	<button class={cn(classes.base, variantClasses, sizeClasses, className)} {...props}>
 		{@render children()}
 	</button>
 {/if}

@@ -33,7 +33,7 @@
 			</nav>
 
 			<div class="hidden items-center space-x-4 md:flex">
-				<LocaleSwitcher />
+				<LocaleSwitcher anchorPosition="bottom-left" />
 			</div>
 
 			<div class="text-white md:hidden">
@@ -79,8 +79,9 @@
 					</a>
 				</nav>
 				<div class="mt-4 flex items-center space-x-4 border-t border-white/10 pt-4">
-					<LocaleSwitcher />
-					<Button className="py-2 h-auto">{m.gross_mellow_capybara_pray()}</Button>
+					<LocaleSwitcher anchorPosition="bottom-right" class="py-2 h-9"/>
+					<Button href={localizeHref('/contact')} class="py-2 h-9">Me contacter</Button>
+					<!-- <Button class="py-2 h-auto">{m.gross_mellow_capybara_pray()}</Button> -->
 				</div>
 			</div>
 		{/if}
