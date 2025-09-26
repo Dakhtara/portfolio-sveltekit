@@ -1,14 +1,13 @@
 <script lang="ts">
-	import type { Snippet } from "svelte";
+	import type { Snippet } from 'svelte';
 
+	type Props = {
+		children: Snippet;
+	};
 
-type Props = {
-    children: Snippet
-}
-
-let { children }: Props = $props();
+	let { children }: Props = $props();
 </script>
 
-<span class="inline-block bg-white/10 text-white text-sm font-medium px-3 py-1 rounded-full">
-    {@render children()}
-    </span>
+<span class="inline-block rounded-full bg-white/10 px-3 py-1 text-sm font-medium text-white">
+	{@render children()}
+</span>

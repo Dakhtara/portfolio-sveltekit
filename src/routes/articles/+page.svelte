@@ -67,7 +67,7 @@
 	/>
 </svelte:head>
 
-<section class="bg-gradient-to-b from-slate-900 via-gray-900/20 to-slate-900 px-6 pt-32 pb-16">
+<section class="bg-gradient-to-b from-slate-900 via-gray-900/20 to-slate-900 px-6 pt-32 md:pb-16">
 	<div class="mx-auto max-w-4xl">
 		<div class="mb-8">
 			<Button
@@ -123,7 +123,7 @@
 	</div>
 </section>
 
-<section class="bg-white/[0.01] px-6 py-16">
+<section class="bg-white/[0.01] px-6 md:py-16">
 	<div class="mx-auto max-w-4xl">
 		<div class="mb-8 flex items-center justify-between">
 			<h2 class="text-3xl font-bold text-white">{m.great_few_gibbon_bake()}</h2>

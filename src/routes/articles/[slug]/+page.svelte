@@ -26,7 +26,7 @@
 	<meta property="og:url" content={'https://amatignon.fr/articles/' + data.article.slug} />
 </svelte:head>
 
-<div class="mx-auto max-w-3xl py-24 lg:px-8">
+<div class="container mx-auto max-w-3xl py-24 lg:px-8">
 	{#if data.article.thumbnail}
 		<div class="relative mb-12">
 			<div class="">
@@ -35,10 +35,16 @@
 			<div
 				class="absolute bottom-0 w-full rounded-b-lg bg-gradient-to-b from-transparent to-black pt-18 pb-8"
 			>
-				<h1 class="mb-4 text-center text-4xl font-bold tracking-tight text-zinc-100 sm:text-5xl" in:fly|global={{ y: 20, delay: 500, duration: 500, easing: cubicOut }}>
+				<h1
+					class="mb-4 text-center text-4xl font-bold tracking-tight text-zinc-100 sm:text-5xl"
+					in:fly|global={{ y: 20, delay: 500, duration: 500, easing: cubicOut }}
+				>
 					{data.article.title}
 				</h1>
-				<p class="flex items-center justify-center gap-2 text-center text-sm text-zinc-100" in:fly|global={{ y: 20,delay: 900, duration: 500, easing: cubicOut }}>
+				<p
+					class="flex items-center justify-center gap-2 text-center text-sm text-zinc-100"
+					in:fly|global={{ y: 20, delay: 900, duration: 500, easing: cubicOut }}
+				>
 					{format(new Date(data.article.date), 'MMMM dd, yyyy', {
 						locale: getLocale() === 'fr' ? fr : enGB
 					})}
