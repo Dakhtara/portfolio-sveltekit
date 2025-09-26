@@ -4,7 +4,8 @@
 	import Header from '$lib/components/layout/Header.svelte';
 	import Footer from '$lib/components/layout/Footer.svelte';
 	import { browser, dev } from '$app/environment';
-
+	import { page } from '$app/state';
+	import { locales, localizeHref } from '$lib/paraglide/runtime';
 	let { children } = $props();
 </script>
 
@@ -24,7 +25,11 @@
 		></script>
 	{/if}
 </svelte:head>
-
+<div class="hidden">
+	{#each locales as locale}
+		<a href={localizeHref(page.url.pathname, { locale })}>{locale}</a>
+	{/each}
+</div>
 <div class="min-h-dvh bg-slate-900 text-white">
 	<div class="container mx-auto">
 		<Header />
