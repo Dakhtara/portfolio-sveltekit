@@ -140,8 +140,14 @@ Lorsqu'on les actives si la demande est concluante alors on install le service-w
 Ensuite côté front on récupère sa souscription qu'on va enregistrer en BDD afin de pouvoir lui envoyer directement des Notifications en background.
 
 
+## SSE
+Afin d'avoir accès aux nouveaux messages, j'ai utilisé le SSE pour rafraichir la vue sur la sidenav du nombre de message, mais il faudrait aussi rafraichir la liste des notifications.
+
+
+
+
 # Roadmap
-- [ ] Pouvoir envoyer des notifications (pour le moment c’est juste de la souscription) 
+- [x] Pouvoir envoyer des notifications (pour le moment c’est juste de la souscription) 
 - [ ] Régler quelles priorités trigger des notifications
 - [ ] Pouvoir gérer les souscriptions aux notifications par device
 - [ ] Changer le système de ping sur le client, au lieu de faire un afterNavigate, utiliser un SSE plutôt
