@@ -7,7 +7,10 @@
 	import { Clock } from '@lucide/svelte';
 	import { fly } from 'svelte/transition';
 	import { cubicOut } from 'svelte/easing';
+	import TableOfContent from './comp/TableOfContent.svelte';
 	let { data }: PageProps = $props();
+
+	
 </script>
 
 <svelte:head>
@@ -26,7 +29,7 @@
 	<meta property="og:url" content={'https://amatignon.fr/articles/' + data.article.slug} />
 </svelte:head>
 
-<div class="container mx-auto max-w-3xl py-24 lg:px-8">
+<div class="container mx-auto max-w-3xl pt-24 lg:px-8">
 	{#if data.article.thumbnail}
 		<div class="relative mb-12">
 			<div class="">
@@ -63,7 +66,13 @@
 			{data.article.title}
 		</h1>
 	{/if}
-	<div class="prose max-w-full prose-invert prose-h1:mt-18">
-		{@html data.article.content.html}
+</div>
+<div class="container mx-auto py-12 lg:px-8">
+	<div class="flex gap-8">
+		<TableOfContent markdown={data.article.content.html} />
+
+		<div class="prose prose-invert prose-h1:mt-18">
+			{@html data.article.content.html}
+		</div>
 	</div>
 </div>

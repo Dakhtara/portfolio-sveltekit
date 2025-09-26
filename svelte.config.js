@@ -1,7 +1,8 @@
 import { mdsvex, escapeSvelte } from 'mdsvex';
 import adapter from '@sveltejs/adapter-node';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
-
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypeSlug from 'rehype-slug';
 import { createHighlighter } from 'shiki';
 
 const theme = 'catppuccin-macchiato';
@@ -17,7 +18,8 @@ const mdsvexOptions = {
 			const html = escapeSvelte(highlighter.codeToHtml(code, { lang, theme }));
 			return `{@html \`${html}\` }`;
 		}
-	}
+	},
+	rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
 };
 
 /** @type {import('@sveltejs/kit').Config} */

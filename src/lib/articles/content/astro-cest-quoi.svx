@@ -1,7 +1,7 @@
 ---
 title: "Astro, c'est quoi"
 description: "Astro devient de plus en plus populaires. Mais à quoi ca sert et comment déployer un site sous Astro ?"
-slug: "css-grid"
+slug: "astro-cest-quoi"
 date: "2024-05-21"
 readTime: "3 min"
 category: "Astro"
