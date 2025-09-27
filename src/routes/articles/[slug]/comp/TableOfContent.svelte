@@ -47,26 +47,30 @@
 	}
 
 	$effect(() => {
-		const handleScroll = () => {
-			const sections = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
-			let currentSection = '';
-			const scrollPosition = window.scrollY + 200; // Adjust offset as needed
+		const sections = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
 
-			sections.forEach((section) => {
-				// @ts-expect-error
-				if (section.offsetTop <= scrollPosition) {
-					currentSection = section.id;
-				}
-			});
+		if (sections.length === 0) return;
 
-			activeSection = currentSection;
-		};
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						activeSection = entry.target.id;
+					}
+				});
+			},
+			{
+				rootMargin: `-${headerHeight + 20}px 0px -70% 0px`,
+				threshold: 0
+			}
+		);
 
-		window.addEventListener('scroll', handleScroll);
-		handleScroll(); // Initial call to set the active section
+		sections.forEach((section) => {
+			observer.observe(section);
+		});
 
 		return () => {
-			window.removeEventListener('scroll', handleScroll);
+			observer.disconnect();
 		};
 	});
 </script>
