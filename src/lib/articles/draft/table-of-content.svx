@@ -1,0 +1,40 @@
+---
+title: 'Table of content, how to make a nice one for your articles'
+description: 'How to create a table of content for articles based page, and how to make it responsive.'
+slug: 'table-of-content-how-to-make-a-nice-one-for-your-articles'
+date: '2025-09-28'
+readTime: '3 min'
+category: 'Sveltekit'
+tags: ['SvelteKit']
+lang: 'en'
+---
+
+Table of content are a component we are all using in different ways and it's always hard to make a good one.
+
+Here we will explore many versions of them and discover what they are missing and how we can implement one that is either usable on desktop and mobile.
+
+
+## Why a table of content ?
+
+We can find on many website pages a table of content. 
+
+It can either be for a documentation website or also for news website.
+
+Their main purpose is to be able to see the different sections of an article and to navigate to them quickly. 
+
+They are simple to use, a list of sections with links to be able to scroll to them.
+
+## Exploring the existing ones
+
+First we will explore some TOC (Table of Content) we can see around the websites. 
+
+
+### Tailwind
+
+Tailwind is using a TOC  for their page documentation. You can explore them on the right side of the page when available
+
+![Tailwind Documentation Page](/table-of-content/tailwind-sm.webp)
+
+## Thinking what features we want / need
+
+## This website table of content
