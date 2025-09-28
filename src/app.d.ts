@@ -19,6 +19,7 @@ declare module '$env/static/private' {
 
 declare module '$env/static/public' {
 		const PUBLIC_RECAPTCHA_SITE_KEY: string;
+		const PUBLIC_UMAMI_WEBSITE_ID: string;
 }
 
 export {};
