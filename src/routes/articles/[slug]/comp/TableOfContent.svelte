@@ -79,7 +79,7 @@
 	<aside
 		transition:slide={{ duration: 300 }}
 		class={cn('bottom-0  h-[40dvh] shrink-0 md:h-auto', {
-			'fixed z-50 rounded-t-[25px] bg-slate-800/90 backdrop-blur-sm lg:static lg:bg-transparent':
+			'fixed z-50 left-4 right-4 rounded-t-[25px] bg-slate-800/90 backdrop-blur-sm lg:static lg:bg-transparent':
 				isMobileOpen,
 			'hidden w-64 lg:block': !isMobileOpen
 		})}
