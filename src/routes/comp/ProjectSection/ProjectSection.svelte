@@ -13,6 +13,12 @@
 
 		<div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
 			<Project
+				title="NTFY Sveltekit"
+				description={m.factual_teal_crocodile_gaze()}
+				tags={['Sveltekit', 'TailwindCSS', 'NTFY']}
+				src="/ntfy-sveltekit/homepage.png"
+			/>
+			<Project
 				title="Crossfit Les Sables d'Olonne"
 				description={m.gross_even_trout_loop()}
 				tags={['Astro', 'TailwindCSS']}

@@ -70,5 +70,6 @@
 	"grassy_tiny_bulldog_lift": "Création et maintenance de sites internet sous Symfony 2.\\rMigration du site voyagebohemechic de Wordpress vers Symfony 2.\\rDéveloppement d'une solution e-commerce en interne sous Symfony.",
 	"spare_petty_gecko_aim": "Aucun article trouvé",
 	"male_clear_snake_radiate": "Essayez d'ajuster vos critères de recherche ou de filtrage",
-	"legal_clear_bear_bump": "Sommaire"
+	"legal_clear_bear_bump": "Sommaire",
+	"factual_teal_crocodile_gaze": "Un wrapper SvelteKit pour le service de notification NTFY avec une interface utilisateur moderne (Shadcn svelte).\n Il permet de lire les notifications depuis le serveur officiel ntfy ou depuis votre propre instance."
 }
