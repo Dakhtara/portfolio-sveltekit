@@ -1,0 +1,192 @@
+---
+title: 'Table of content, how to make a nice one for your articles'
+description: 'How to create a table of content for articles based page, and how to make it responsive.'
+slug: 'table-of-content-how-to-make-a-nice-one-for-your-articles'
+date: '2025-10-19'
+readTime: '6 min'
+category: 'Sveltekit'
+tags: ['SvelteKit']
+lang: 'en'
+---
+
+<script lang="ts">
+    import Images from "$lib/components/Images.svelte";
+</script>
+
+Table of content are a component we are all using in different ways and it's always hard to make a good one.
+
+Here we will explore many versions of them and discover what they are missing and how we can implement one that is either usable on desktop and mobile.
+
+
+## Why a table of content ?
+
+We can find on many website pages a table of content. 
+
+It can either be for a documentation website or also for news website.
+
+Their main purpose is to be able to see the different sections of an article and to navigate to them quickly. 
+
+They are simple to use, a list of sections with links to be able to scroll to them.
+
+## Exploring the existing ones
+
+First we will explore some TOC (Table of Content) we can see around the websites. 
+
+
+### Tailwind
+
+Tailwind is using a TOC  for their page documentation. You can explore them on the right side of the page when available
+
+![Tailwind Documentation Page](/table-of-content/tailwind-sm.webp)
+
+## Thinking what features we want / need
+
+The main features we want for our TOC are :
+
+- Usable on both desktop and mobile (responsive in any case)
+- Easy to understand
+- Automatically generated from the article content
+- Understanding the current section we are reading
+
+All these features are important to implement a good TOC.
+
+But we are missing some features for now like the accessibility part.
+
+I want to have a TOC accessible, but for now I need to explore more how to do it properly.
+
+## This website table of content
+
+The TOC you can find on the website fill almost all the requirements I wanted.
+
+
+First let's have a look at the component and then we will dig into the code on how to do it.
+
+### The final result 
+
+Usable on Desktop with this side section : 
+
+<Images alt="Desktop Toc" sources={[
+    { src: '/table-of-content/toc-website.avif', type: 'image/avif' },
+    { src: '/table-of-content/toc-website.webp', type: 'image/webp' },
+    { src: '/table-of-content/toc-website.png', type: 'image/png' }
+]} />
+
+But also having a popup version for mobile :
+
+
+Closed version (we have an icon popup)
+<Images alt="Mobile Closed Toc" sources={[
+{ src: '/table-of-content/toc-mobile-closed.avif', type: 'image/avif'},
+{ src: '/table-of-content/toc-mobile-closed.webp', type: 'image/webp'},
+{ src: '/table-of-content/toc-mobile-closed.png', type: 'image/png'}
+]} />
+
+
+Open version (we see the table of content)
+<Images alt="Mobile Open Toc" sources={[
+{ src: '/table-of-content/toc-mobile-open.avif', type: 'image/avif'},
+{ src: '/table-of-content/toc-mobile-open.webp', type: 'image/webp'},
+{ src: '/table-of-content/toc-mobile-open.png', type: 'image/png'}
+]} />
+
+
+### How to create this component
+
+The first way of making this TOC was to try with only one DOM for both Mobile and Desktop
+
+But I realised it will be too complicated to have all the features they each need in the same DOM.
+
+So I decided to split the template in two, one side for the Desktop and the other for Mobile.
+
+Everything was simpler but the downside is we have duplicate content for some section. 
+
+At least all the section names are a snippet (you can see it in the Active cursor below)
+
+
+### The active cursor
+
+To be able to do the "Understanding the current section we are reading". I saw that many websites implement an Active indicator on the TOC. 
+To be able to do this we need to understand few things about our content. 
+
+
+*The headings position*
+The most important is to be able to watch the presence on the screen of the headings. 
+This can easily be done with the interesection observer, and as each Heading have an id (based on their content) then we can know which session is active.
+
+
+So first we take all headings on our page. Then we give them an interesection observer
+
+```svelte
+
+$effect(() => {
+		const sections = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+
+		if (sections.length === 0) return;
+
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						activeSection = entry.target.id;
+					}
+				});
+			},
+			{
+				rootMargin: `-${headerHeight + 20}px 0px -70% 0px`,
+				threshold: 0
+			}
+		);
+
+		sections.forEach((section) => {
+			observer.observe(section);
+		});
+
+		return () => {
+			observer.disconnect();
+		};
+	});
+```
+
+Then with this the variable activeSection has the id of the active heading.
+
+In our table of content we can then style it as we want. 
+
+For here we put this value :
+
+```svelte
+<a
+		href={'#' + id}
+		class={cn(
+			'block rounded-md px-3 py-2 text-sm font-medium text-slate-400 transition-colors ease-in hover:text-slate-100',
+			{
+				'bg-gradient-to-l from-orange-500 to-pink-500 bg-clip-text text-transparent':
+					activeSection === id
+			}
+		)}
+		style="margin-left: {(level - 1) * 10}px"
+		onclick={(e) => scrollToHeading(e, id)}>{text}</a
+	>
+```
+
+
+### Scrolling to section on click
+
+To have this table of content working, we need to scroll to the section on click and for this nothing fancy just a small function to have the smooth scrolling.
+
+```svelte
+	function scrollToHeading(e: MouseEvent, id: string) {
+		e.preventDefault();
+		const element = document.getElementById(id);
+		if (element) {
+			const elementTop = element.getBoundingClientRect().top + window.pageYOffset;
+			console.log(elementTop, headerHeight);
+			window.scrollTo({
+				top: elementTop - headerHeight - 20,
+				behavior: 'smooth'
+			});
+		}
+	}
+```
+
+
+
