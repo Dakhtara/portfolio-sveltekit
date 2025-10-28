@@ -11,6 +11,7 @@ RUN npm ci
 
 # Copy source files
 COPY . .
+ENV PUBLIC_RECAPTCHA_SITE_KEY=qsd
 
 # Build Storybook static files
 RUN npm run build-storybook
