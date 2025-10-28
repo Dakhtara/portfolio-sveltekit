@@ -5,7 +5,7 @@ services:
       dockerfile: Dockerfile.storybook
     container_name: storybook-app
     ports:
-      - "8009:80"
+      - "8012:80"
     restart: unless-stopped
     environment:
       - NODE_ENV=production
