@@ -9,8 +9,6 @@
 	import { cubicOut } from 'svelte/easing';
 	import TableOfContent from './comp/TableOfContent.svelte';
 	let { data }: PageProps = $props();
-
-	
 </script>
 
 <svelte:head>
@@ -29,7 +27,7 @@
 	<meta property="og:url" content={'https://amatignon.fr/articles/' + data.article.slug} />
 </svelte:head>
 
-<div class="container mx-auto max-w-3xl pt-24 px-4 lg:px-8">
+<div class="container mx-auto max-w-3xl px-4 pt-24 lg:px-8">
 	{#if data.article.thumbnail}
 		<div class="relative mb-12">
 			<div class="">
@@ -67,11 +65,13 @@
 		</h1>
 	{/if}
 </div>
-<div class="container mx-auto sm:py-12 px-4 lg:px-8">
+<div class="container mx-auto px-4 sm:py-12 lg:px-8">
 	<div class="flex max-w-full gap-8">
 		<TableOfContent markdown={data.article.content.html} />
 
-		<article class="prose prose-slate prose-invert max-w-none prose-h1:mt-18 min-w-0 prose-pre:whitespace-pre-wrap prose-code:whitespace-pre-wrap prose-pre:break-words">
+		<article
+			class="prose max-w-none min-w-0 prose-slate prose-invert prose-h1:mt-18 prose-code:whitespace-pre-wrap prose-pre:break-words prose-pre:whitespace-pre-wrap"
+		>
 			{@html data.article.content.html}
 		</article>
 	</div>

@@ -29,7 +29,14 @@ export default async function ListArticles(): Promise<Article[]> {
 			metadata: ArticleMetadata;
 			default: Component;
 		};
-		processed.push({ ...source.metadata, content: render(source.default) });
+		const rendered = render(source.default);
+		processed.push({ 
+			...source.metadata, 
+			content: {
+				html: rendered.html,
+				body: rendered.body
+			}
+		});
 	}
 
 	// Sort descending by date by default
