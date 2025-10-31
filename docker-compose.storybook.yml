@@ -1,0 +1,10 @@
+services:
+  storybook:
+    build:
+      context: .
+      dockerfile: Dockerfile.storybook
+    container_name: storybook-app
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+
