@@ -5,8 +5,8 @@
 
 	type Props = {
 		children: Snippet;
-		variant?: 'default' | 'white' | 'outline' | 'ghost';
-		className?: string;
+		variant?: 'white' | 'outline' | 'ghost';
+		class?: string;
 		size?: 'default' | 'icon';
 	} & HTMLButtonAttributes &
 		HTMLAnchorAttributes;
@@ -20,7 +20,7 @@
 	}: Props = $props();
 
 	let classes = {
-		base: 'h-12 flex items-center cursor-pointer rounded-lg px-6 py-3 font-medium transition-all duration-200',
+		base: 'h-12 inline-flex items-center cursor-pointer rounded-lg px-6 py-3 font-medium transition-all duration-200',
 		default: 'border',
 		white: 'bg-white text-black hover:bg-white/90',
 		outline: 'border py-2 border-white/20 bg-transparent text-white hover:bg-white/5',
@@ -32,8 +32,8 @@
 		icon: 'h-10 w-10 p-0 justify-center'
 	};
 
-	let variantClasses = classes[variant];
-	let sizeClasses = sizes[size];
+	let variantClasses = $derived(classes[variant]);
+	let sizeClasses = $derived(sizes[size]);
 </script>
 
 {#if props.href}

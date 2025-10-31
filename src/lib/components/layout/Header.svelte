@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { SquareMenu, X } from '@lucide/svelte';
-	import Button from '../Button.svelte';
+	import Button from '../button/Button.svelte';
 	import { localizeHref } from '$lib/paraglide/runtime.js';
 
 	import LocaleSwitcher from '../LocaleSwitcher.svelte';
