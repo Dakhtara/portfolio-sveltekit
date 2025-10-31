@@ -3,7 +3,7 @@
 	import Button from '../button/Button.svelte';
 	import { localizeHref } from '$lib/paraglide/runtime.js';
 
-	import LocaleSwitcher from '../LocaleSwitcher.svelte';
+	import LocaleSwitcher from '../locale-switcher/LocaleSwitcher.svelte';
 	import { slide } from 'svelte/transition';
 	import * as m from '$lib/paraglide/messages';
 	let isMenuOpen = $state(false);
