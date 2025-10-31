@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Button from '$lib/components/Button.svelte';
-	import AnimationHeader from '$lib/components/AnimationHeader.svelte';
+	import Button from '$lib/components/button/Button.svelte';
+	import AnimationHeader from '$lib/components/animation-header/AnimationHeader.svelte';
 	import gsap from 'gsap';
 	import { SplitText } from 'gsap/SplitText';
 	import { onMount } from 'svelte';

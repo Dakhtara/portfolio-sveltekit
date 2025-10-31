@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Button from '$lib/components/Button.svelte';
+	import Button from '$lib/components/button/Button.svelte';
 	import { localizeHref } from '$lib/paraglide/runtime';
 	import { ArrowLeft, Clock, Search } from '@lucide/svelte';
 	import type { PageProps } from './$types';

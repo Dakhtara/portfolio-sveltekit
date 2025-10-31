@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Button from "../Button.svelte";
+	import Button from "../button/Button.svelte";
 	import Github from "../icon/Github.svelte";
 	import Linkedin from "../icon/Linkedin.svelte";
     import * as m from "$lib/paraglide/messages";
