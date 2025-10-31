@@ -11,7 +11,7 @@ lang: 'en'
 ---
 
 <script lang="ts">
-    import DisclaimerBanner from "$lib/components/DisclaimerBanner.svelte";
+    import DisclaimerBanner from "$lib/components/disclaimer-banner/DisclaimerBanner.svelte";
 </script>
 
 <DisclaimerBanner slug="ntfy-sveltekit" />

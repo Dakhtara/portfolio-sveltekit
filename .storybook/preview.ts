@@ -1,6 +1,7 @@
 import type { Preview } from '@storybook/sveltekit'
 
 import '../src/app.css';
+import { INITIAL_VIEWPORTS } from 'storybook/viewport';
 
 const preview: Preview = {
   parameters: {
@@ -10,6 +11,9 @@ const preview: Preview = {
 
       }
     },
+    viewport: {
+      options: INITIAL_VIEWPORTS,
+    },
     controls: {
       matchers: {
        color: /(background|color)$/i,
@@ -18,7 +22,7 @@ const preview: Preview = {
     },
   },
   initialGlobals: {
-
+    viewport: {value: 'desktop'},
     backgrounds: {value: 'dark'}
   }
 };
