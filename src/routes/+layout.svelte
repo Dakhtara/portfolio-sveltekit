@@ -6,7 +6,7 @@
 	import { browser, dev } from '$app/environment';
 	import { page } from '$app/state';
 	import { locales, localizeHref } from '$lib/paraglide/runtime';
-	import { PUBLIC_UMAMI_WEBSITE_ID } from '$env/static/public';
+	import { env } from '$env/dynamic/public';
 
 	let { children } = $props();
 </script>
@@ -18,7 +18,7 @@
 		<script
 			defer
 			src="https://umami.amatignon.fr/script.js"
-			data-website-id={PUBLIC_UMAMI_WEBSITE_ID}
+			data-website-id={env.PUBLIC_UMAMI_WEBSITE_ID}
 		></script>
 		<script
 			defer
