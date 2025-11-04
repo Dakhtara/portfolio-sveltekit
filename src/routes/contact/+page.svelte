@@ -39,7 +39,7 @@
 <svelte:head>
 	<title>Contact - Anthony Matignon</title>
 	<meta name="description" content={m.that_curly_anteater_sew()} />
-	<script data-recaptcha="google" src="https://www.google.com/recaptcha/api.js?render={PUBLIC_RECAPTCHA_SITE_KEY}"></script>
+	<script data-recaptcha="google" src="https://www.google.com/recaptcha/api.js?render={env.PUBLIC_RECAPTCHA_SITE_KEY}"></script>
 </svelte:head>
 
 <section class="relative overflow-hidden pt-32 pb-20">
