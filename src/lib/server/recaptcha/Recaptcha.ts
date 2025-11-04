@@ -1,9 +1,9 @@
-import { RECAPTCHA_PRIVATE_KEY } from '$env/static/private';
+import { env } from '$env/dynamic/private';
 
 export default class Recaptcha {
 	static async verify(token: string): Promise<{ success: boolean; score?: number }> {
 		// Verify reCAPTCHA
-		const secretKey = RECAPTCHA_PRIVATE_KEY;
+		const secretKey = env.RECAPTCHA_PRIVATE_KEY;
 		if (!secretKey) {
 			console.error('RECAPTCHA_PRIVATE_KEY is not set.');
 			throw new Error('reCAPTCHA verification failed. Please try again.');

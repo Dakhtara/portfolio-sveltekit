@@ -4,7 +4,7 @@
 	import * as m from '$lib/paraglide/messages';
 	import { enhance } from '$app/forms';
 	import type { PageProps } from './$types';
-	import { PUBLIC_RECAPTCHA_SITE_KEY } from '$env/static/public';
+	import { env } from '$env/dynamic/public';
 	import type { SubmitFunction } from '@sveltejs/kit';
 	import { onDestroy } from 'svelte';
 	let { form }: PageProps = $props();
@@ -17,7 +17,7 @@
             // @ts-expect-error
 			grecaptcha.ready(async () => {
                 // @ts-expect-error
-				token = await grecaptcha.execute(PUBLIC_RECAPTCHA_SITE_KEY, { action: 'submit' });
+				token = await grecaptcha.execute(env.PUBLIC_RECAPTCHA_SITE_KEY, { action: 'submit' });
 				setTimeout(() => event.formElement.requestSubmit());
 			});
 

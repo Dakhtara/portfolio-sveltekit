@@ -1,12 +1,11 @@
-import { NTFY_AUTH_TOKEN } from "$env/static/private";
-import { NTFY_API_URL, NTFY_TOPIC } from "$env/static/private";
+import { env } from "$env/dynamic/private";
 
 
 export class Notify {
     static async send(message: string, title?: string, priority: 'min' | 'low' | 'default' | 'high' | 'max' = 'default') {
-        const apiUrl = NTFY_API_URL;
-        const topic = NTFY_TOPIC;
-        const authToken = NTFY_AUTH_TOKEN;
+        const apiUrl = env.NTFY_API_URL;
+        const topic = env.NTFY_TOPIC;
+        const authToken = env.NTFY_AUTH_TOKEN;
 
 
         if (!apiUrl || !topic || !authToken) {

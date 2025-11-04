@@ -10,14 +10,14 @@ declare global {
 	}
 }
 
-declare module '$env/static/private' {
+declare module '$env/dynamic/private' {
 		const NTFY_API_URL: string;
 		const NTFY_TOPIC: string;
 		const NTFY_AUTH_TOKEN: string;
 		const RECAPTCHA_PRIVATE_KEY: string;
 }
 
-declare module '$env/static/public' {
+declare module '$env/dynamic/public' {
 		const PUBLIC_RECAPTCHA_SITE_KEY: string;
 		const PUBLIC_UMAMI_WEBSITE_ID: string;
 }
