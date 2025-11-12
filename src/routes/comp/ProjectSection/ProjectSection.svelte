@@ -2,6 +2,11 @@
 	import HeadingSectionAnimation from '../HeadingSectionAnimation.svelte';
 	import Project from './Project.svelte';
 	import * as m from '$lib/paraglide/messages';
+	import NtfySveltekitImg from '$lib/assets/ntfy-sveltekit/homepage.png?enhanced';
+	import CrossfitLsdImg from '$lib/assets/crossfit-lsd.webp?enhanced';
+	import AfterlifeImg from '$lib/assets/afterlife.webp?enhanced';
+	import AprilMarineImg from '$lib/assets/logo-april-marine.webp?enhanced';
+	import MusicPlayerImg from '$lib/assets/lecteur-musique.webp?enhanced';
 </script>
 
 <section class="px-6 py-24">
@@ -16,31 +21,32 @@
 				title="NTFY Sveltekit"
 				description={m.factual_teal_crocodile_gaze()}
 				tags={['Sveltekit', 'TailwindCSS', 'NTFY']}
-				src="/ntfy-sveltekit/homepage.png"
+				src={NtfySveltekitImg}
 			/>
+			
 			<Project
 				title="Crossfit Les Sables d'Olonne"
 				description={m.gross_even_trout_loop()}
 				tags={['Astro', 'TailwindCSS']}
-				src="/crossfit-lsd.webp"
+				src={CrossfitLsdImg}
 			/>
 			<Project
 				title="Afterlife"
 				description={m.alert_watery_warbler_jest()}
 				tags={['ThreeJS']}
-				src="/afterlife.webp"
+				src={AfterlifeImg}
 			/>
 			<Project
 				title="April Marine"
 				description={m.sleek_topical_rooster_laugh()}
 				tags={['Symfony', 'API']}
-				src="/logo-april-marine.webp"
+				src={AprilMarineImg}
 			/>
 			<Project
 				title={m.new_green_anaconda_arise()}
 				description={m.bold_heroic_cuckoo_laugh()}
 				tags={['Vue', 'Express', 'FFMpeg']}
-				src="/lecteur-musique.webp"
+				src={MusicPlayerImg}
 			/>
 		</div>
 	</div>

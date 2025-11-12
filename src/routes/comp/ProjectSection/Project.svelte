@@ -1,28 +1,29 @@
 <script lang="ts">
 	import nl2br from '$lib/utils/nl2br';
 	import Badge from '$lib/components/Badge.svelte';
+	import type { Picture } from 'vite-imagetools';
 
     type Props = {
         title: string;
         description: string;
         tags: string[];
-        src: string;
+        src: Picture;
     }
     let {title, description, tags, src}: Props = $props();
 </script>
 
 <div
-	class="group overflow-hidden rounded-lg border border-white/10 bg-white/[0.02] py-3 backdrop-blur-sm transition-all duration-500 hover:border-white/20 hover:shadow-2xl hover:shadow-cyan-500/10"
+	class="group overflow-hidden rounded-lg border border-white/10 bg-white/2 py-3 backdrop-blur-sm transition-all duration-500 hover:border-white/20 hover:shadow-2xl hover:shadow-cyan-500/10"
 >
 	<div class="relative overflow-hidden">
-		<img
+		<enhanced:img
 			class="h-56 w-full object-cover transition-transform duration-700 group-hover:scale-105"
 			src={src}
 			loading="lazy"
 			alt="Description de {title}"
 		/>
 		<div
-			class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+			class="absolute inset-0 bg-linear-to-t from-slate-900/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
 		></div>
 	</div>
 	<div class="p-6">

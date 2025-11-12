@@ -1,5 +1,7 @@
 import type { Component } from 'svelte';
 import { render } from 'svelte/server';
+import type { Picture } from 'vite-imagetools';
+import { GeneratedThumbnailRegistry } from './generated-thumbnails.js';
 
 type Article = ArticleMetadata & {
 	content: {
@@ -17,6 +19,7 @@ type ArticleMetadata = {
 	category?: string;
 	tags?: string[];
 	thumbnail?: string;
+	thumbnailPicture?: Picture | string;
 	lang: string;
 };
 
@@ -30,8 +33,16 @@ export default async function ListArticles(): Promise<Article[]> {
 			default: Component;
 		};
 		const rendered = render(source.default);
+		
+		// Handle thumbnail using the auto-generated registry
+		let thumbnailPicture = undefined;
+		if (source.metadata.thumbnail) {
+			thumbnailPicture = GeneratedThumbnailRegistry.getThumbnail(source.metadata.thumbnail);
+		}
+		
 		processed.push({ 
 			...source.metadata, 
+			thumbnailPicture,
 			content: {
 				html: rendered.html,
 				body: rendered.body
