@@ -1,7 +1,7 @@
 import type { Component } from 'svelte';
 import { render } from 'svelte/server';
-import type { Picture } from 'vite-imagetools';
-import { GeneratedThumbnailRegistry } from './generated-thumbnails.js';
+import type { ThumbnailEntry } from './thumbnail-types.js';
+import { GeneratedThumbnailRegistry } from '../../../.svelte-kit/generated/thumbnail-registry.js';
 
 type Article = ArticleMetadata & {
 	content: {
@@ -19,7 +19,7 @@ type ArticleMetadata = {
 	category?: string;
 	tags?: string[];
 	thumbnail?: string;
-	thumbnailPicture?: Picture | string;
+	thumbnailPicture?: ThumbnailEntry;
 	lang: string;
 };
 
