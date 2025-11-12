@@ -71,5 +71,10 @@
 	"spare_petty_gecko_aim": "Aucun article trouvé",
 	"male_clear_snake_radiate": "Essayez d'ajuster vos critères de recherche ou de filtrage",
 	"legal_clear_bear_bump": "Sommaire",
-	"factual_teal_crocodile_gaze": "Un wrapper SvelteKit pour le service de notification NTFY avec une interface utilisateur moderne (Shadcn svelte).\n Il permet de lire les notifications depuis le serveur officiel ntfy ou depuis votre propre instance."
+	"factual_teal_crocodile_gaze": "Un wrapper SvelteKit pour le service de notification NTFY avec une interface utilisateur moderne (Shadcn svelte).\n Il permet de lire les notifications depuis le serveur officiel ntfy ou depuis votre propre instance.",
+	"error_page_title": "Page non trouvée - Anthony Matignon",
+	"error_page_description": "La page que vous recherchez n'existe pas.",
+	"error_page_heading": "Oops, page non trouvée",
+	"error_page_content": "La page sur laquelle vous souhaitez naviguer n'existe pas.",
+	"error_page_back_home": "Retour à l'accueil"
 }
