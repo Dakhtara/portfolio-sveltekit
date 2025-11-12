@@ -71,5 +71,10 @@
 	"spare_petty_gecko_aim": "No articles found",
 	"male_clear_snake_radiate": "Try adjusting your search or filter criteria",
 	"legal_clear_bear_bump": "Table of Contents",
-	"factual_teal_crocodile_gaze": "A SvelteKit wrapper for the NTFY notification service with a modern UI (Shadcn svelte).\\nIt allows to read the notifications from the official ntfy server or from your own instance."
+	"factual_teal_crocodile_gaze": "A SvelteKit wrapper for the NTFY notification service with a modern UI (Shadcn svelte).\\nIt allows to read the notifications from the official ntfy server or from your own instance.",
+	"error_page_title": "Page not found - Anthony Matignon",
+	"error_page_description": "The page you are looking for does not exist.",
+	"error_page_heading": "Oops, page not found",
+	"error_page_content": "The page you are trying to navigate to does not exist.",
+	"error_page_back_home": "Back to home"
 }
