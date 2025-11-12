@@ -6,7 +6,7 @@ date: "2025-09-25"
 readTime: "8 min"
 category: "Sveltekit"
 tags: ["SvelteKit", "JS", "Framework"]
-thumbnail: "/ntfy-sveltekit/homepage.png"
+thumbnail: "ntfy-sveltekit/homepage.png?enhanced"
 lang: "fr"
 ---
 

@@ -28,10 +28,10 @@
 </svelte:head>
 
 <div class="container mx-auto max-w-3xl px-4 pt-24 lg:px-8">
-	{#if data.article.thumbnail}
+	{#if data.article.thumbnailPicture}
 		<div class="relative mb-12">
 			<div class="">
-				<img src={data.article.thumbnail} alt={data.article.title} class=" rounded-lg" />
+				<enhanced:img src={data.article.thumbnailPicture} alt={data.article.title} class=" rounded-lg" />
 			</div>
 			<div
 				class="absolute bottom-0 w-full rounded-b-lg bg-gradient-to-b from-transparent to-black pt-18 pb-8"
