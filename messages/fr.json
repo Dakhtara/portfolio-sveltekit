@@ -76,5 +76,7 @@
 	"error_page_description": "La page que vous recherchez n'existe pas.",
 	"error_page_heading": "Oops, page non trouvée",
 	"error_page_content": "La page sur laquelle vous souhaitez naviguer n'existe pas.",
-	"error_page_back_home": "Retour à l'accueil"
+	"error_page_back_home": "Retour à l'accueil",
+	"seo_homepage_description": "Anthony Matignon - Développeur Front et Back. Développeur web passionné par la création d'expériences utilisateur fluides et engageantes avec les technologies modernes.",
+	"seo_articles_description": "Lisez des articles sur le développement web, la programmation et bien plus par Anthony Matignon."
 }

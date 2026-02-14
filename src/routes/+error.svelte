@@ -1,15 +1,15 @@
 <script>
 	import AnimationHeader from "$lib/components/animation-header/AnimationHeader.svelte";
 	import Button from "$lib/components/button/Button.svelte";
+	import SEO from "$lib/components/seo/SEO.svelte";
 	import { localizeHref } from "$lib/paraglide/runtime";
 	import * as m from "$lib/paraglide/messages.js";
-
 </script>
 
-<svelte:head>
-    <title>{m.error_page_title()}</title>
-    <meta name="description" content={m.error_page_description()} />
-</svelte:head>
+<SEO
+	title={m.error_page_title()}
+	description={m.error_page_description()}
+/>
 
 
 <section  class="relative min-h-[54dvh] w-full overflow-hidden pt-24">

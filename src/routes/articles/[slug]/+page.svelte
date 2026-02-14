@@ -8,23 +8,43 @@
 	import { fly } from 'svelte/transition';
 	import { cubicOut } from 'svelte/easing';
 	import TableOfContent from './comp/TableOfContent.svelte';
+	import SEO from '$lib/components/seo/SEO.svelte';
 	let { data }: PageProps = $props();
 </script>
 
+<SEO
+	title="{data.article.title} - Anthony Matignon"
+	description={data.article.description}
+	type="article"
+	article={{
+		publishedTime: data.article.date,
+		author: 'Anthony Matignon',
+		tags: data.article.tags
+	}}
+/>
+
 <svelte:head>
-	<title>{data.article.title} - Anthony Matignon</title>
-	<meta name="description" content={data.article.description} />
-	<meta property="og:title" content={data.article.title + ' - Anthony Matignon'} />
-	<meta property="og:description" content={data.article.description} />
-	<meta property="og:type" content="article" />
-	<meta property="article:published_time" content={data.article.date} />
-	<meta property="article:author" content="Anthony Matignon" />
-	{#if data.article.tags}
-		{#each data.article.tags as tag}
-			<meta property="article:tag" content={tag} />
-		{/each}
-	{/if}
-	<meta property="og:url" content={'https://amatignon.fr/articles/' + data.article.slug} />
+	{@html `<script type="application/ld+json">${JSON.stringify({
+		"@context": "https://schema.org",
+		"@type": "Article",
+		"headline": data.article.title,
+		"description": data.article.description,
+		"datePublished": data.article.date,
+		"author": {
+			"@type": "Person",
+			"name": "Anthony Matignon",
+			"url": "https://amatignon.fr"
+		},
+		"publisher": {
+			"@type": "Person",
+			"name": "Anthony Matignon"
+		},
+		"mainEntityOfPage": {
+			"@type": "WebPage",
+			"@id": "https://amatignon.fr/articles/" + data.article.slug
+		},
+		...(data.article.tags ? { "keywords": data.article.tags.join(", ") } : {})
+	})}</script>`}
 </svelte:head>
 
 <div class="container mx-auto max-w-3xl px-4 pt-24 lg:px-8">

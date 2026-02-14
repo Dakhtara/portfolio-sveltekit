@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Button from '$lib/components/button/Button.svelte';
+	import SEO from '$lib/components/seo/SEO.svelte';
 	import { localizeHref } from '$lib/paraglide/runtime';
 	import { ArrowLeft, Clock, Search } from '@lucide/svelte';
 	import type { PageProps } from './$types';
@@ -59,13 +60,10 @@
 	}
 </script>
 
-<svelte:head>
-	<title>Articles - Anthony Matignon</title>
-	<meta
-		name="description"
-		content="Read articles about web development, programming, and more by Anthony Matignon."
-	/>
-</svelte:head>
+<SEO
+	title="Articles - Anthony Matignon"
+	description={m.seo_articles_description()}
+/>
 
 <section class="bg-gradient-to-b from-slate-900 via-gray-900/20 to-slate-900 px-6 pt-32 md:pb-16">
 	<div class="mx-auto max-w-4xl">

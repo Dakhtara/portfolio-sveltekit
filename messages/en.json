@@ -76,5 +76,7 @@
 	"error_page_description": "The page you are looking for does not exist.",
 	"error_page_heading": "Oops, page not found",
 	"error_page_content": "The page you are trying to navigate to does not exist.",
-	"error_page_back_home": "Back to home"
+	"error_page_back_home": "Back to home",
+	"seo_homepage_description": "Anthony Matignon - Front and Back Developer. Passionate web developer creating smooth and engaging user experiences with modern technologies.",
+	"seo_articles_description": "Read articles about web development, programming, and more by Anthony Matignon."
 }

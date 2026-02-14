@@ -1,11 +1,10 @@
 <script lang="ts">
 	import '../app.css';
 	import favicon from '$lib/assets/favicon.jpg';
+	import faviconSvg from '$lib/assets/favicon.svg';
 	import Header from '$lib/components/layout/Header.svelte';
 	import Footer from '$lib/components/layout/Footer.svelte';
 	import { browser, dev } from '$app/environment';
-	import { page } from '$app/state';
-	import { locales, localizeHref } from '$lib/paraglide/runtime';
 	import { env } from '$env/dynamic/public';
 
 	let { children } = $props();
@@ -13,6 +12,8 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
+	<link rel="icon" type="image/svg+xml" href={faviconSvg} />
+	<link rel="apple-touch-icon" href={favicon} />
 
 	{#if browser && !dev}
 		<script
@@ -27,15 +28,12 @@
 		></script>
 	{/if}
 </svelte:head>
-<div class="hidden">
-	{#each locales as locale}
-		<a href={localizeHref(page.url.pathname, { locale })}>{locale}</a>
-	{/each}
-</div>
 <div class="min-h-dvh bg-slate-900 text-white">
 	<div class="container mx-auto">
 		<Header />
-		{@render children?.()}
+		<main>
+			{@render children?.()}
+		</main>
 	</div>
 	<Footer />
 </div>

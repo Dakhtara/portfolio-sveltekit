@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Button from '$lib/components/button/Button.svelte';
+	import SEO from '$lib/components/seo/SEO.svelte';
 	import { Check, Send } from '@lucide/svelte';
 	import * as m from '$lib/paraglide/messages';
 	import { enhance } from '$app/forms';
@@ -36,9 +37,12 @@
 	})
 </script>
 
+<SEO
+	title="Contact - Anthony Matignon"
+	description={m.that_curly_anteater_sew()}
+/>
+
 <svelte:head>
-	<title>Contact - Anthony Matignon</title>
-	<meta name="description" content={m.that_curly_anteater_sew()} />
 	<script data-recaptcha="google" src="https://www.google.com/recaptcha/api.js?render={env.PUBLIC_RECAPTCHA_SITE_KEY}"></script>
 </svelte:head>
 
