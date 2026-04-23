@@ -21,11 +21,6 @@
 			src="https://umami.amatignon.fr/script.js"
 			data-website-id={env.PUBLIC_UMAMI_WEBSITE_ID}
 		></script>
-		<script
-			defer
-			data-domain="amatignon.fr"
-			src="https://plausible.amatignon.fr/js/script.outbound-links.js"
-		></script>
 	{/if}
 </svelte:head>
 <div class="min-h-dvh bg-slate-900 text-white">
